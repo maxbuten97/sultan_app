@@ -1,0 +1,38 @@
+.breadcrumbs {
+  margin-top: 45px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.item {
+  font-weight: 300;
+  line-height: 17px;
+  color: #3f4e65;
+  letter-spacing: 0.02em;
+}
+
+.item:hover {
+  text-decoration: underline;
+}
+
+.categories__select {
+  font-weight: 300;
+  line-height: 17px;
+  color: #3f4e65;
+  opacity: 0.5;
+}
+
+.line {
+  height: 16px;
+  border: 1px dashed #3f4e65;
+  opacity: 0.3;
+}

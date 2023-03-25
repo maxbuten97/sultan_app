@@ -1,0 +1,150 @@
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.basket__title {
+  margin-top: 50px;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: #111111;
+}
+
+.line {
+  margin-top: 50px;
+  width: 100%;
+  opacity: 0.2;
+  border: 1px dashed #3f4e65;
+}
+
+.products__list {
+  margin-top: 50px;
+}
+
+.product__item {
+  margin-top: 50px;
+  display: flex;
+}
+
+.product__row {
+  display: flex;
+  align-items: center;
+}
+
+.product__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 120px;
+  max-width: 445px;
+}
+
+.volume__block {
+  display: flex;
+  gap: 8px;
+}
+
+.volume {
+  font-size: 12px;
+  line-height: 16px;
+  color: #3f4e65;
+}
+
+.product__name {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #111111;
+}
+
+.product__info {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+.line__small {
+  height: 49px;
+  opacity: 0.2;
+  border: 1px dashed #3f4e65;
+}
+
+.quantity {
+  display: flex;
+  gap: 19px;
+  margin-left: 44px;
+  margin-right: 44px;
+}
+
+.down_btn {
+  align-items: center;
+  padding: 5px 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 40%;
+  cursor: pointer;
+}
+
+.number {
+  font-weight: 500;
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+.up_btn {
+  align-items: center;
+  padding: 5px 14px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+  border-radius: 40%;
+  cursor: pointer;
+}
+
+.price {
+  margin: 0 44px 0 44px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  color: #111111;
+}
+
+.basket__delete {
+  margin-left: 42px;
+  background: #ffc85e;
+  border-radius: 50px;
+  padding: 17px 17px 17px 17px;
+}
+
+.checkout__block {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout__btn {
+  padding: 24px 39px 22px 39px;
+  background: #ffc85e;
+  border-radius: 79px;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.checkout__sum {
+  margin: 0 44px 0 44px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  color: #111111;
+}

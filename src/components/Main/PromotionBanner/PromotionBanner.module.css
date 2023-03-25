@@ -1,0 +1,144 @@
+.promotionBanner {
+  position: relative;
+  margin-top: 100px;
+  z-index: 0;
+}
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+.row {
+  position: relative;
+  height: 500px;
+  background: linear-gradient(0deg, #b7bfca 0%, #bdc7d0 65.9%, #bdc7d1 100%);
+  box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+  border-radius: 10px;
+}
+
+.body {
+  position: absolute;
+  z-index: 2;
+  margin: 80px 0 50px 110px;
+}
+
+.period {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.woman__image {
+  position: absolute;
+  right: 0;
+  border-radius: 10px;
+}
+
+.title {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 77px;
+  color: #ffffff;
+}
+.strong {
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 35px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.button {
+  margin-top: 60px;
+  background: #ffc85e;
+  border-radius: 80px;
+  padding: 33.5px 41px 34.5px 54px;
+  cursor: pointer;
+  max-width: 343px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+.arrows {
+  position: relative;
+}
+
+.left_arrow {
+  position: absolute;
+  left: -32px;
+  top: 210px;
+  padding: 25.5px 29px 25.5px 29px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.right_arrow {
+  position: absolute;
+  right: -32px;
+  top: 210px;
+  padding: 25.5px 29px 25.5px 29px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rectangle_active {
+  position: absolute;
+  width: 26px;
+  height: 7px;
+  left: 637px;
+  top: 469px;
+  background: #ffffff;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.rectangle:nth-child(2) {
+  position: absolute;
+  width: 16px;
+  height: 7px;
+  left: 669px;
+  top: 469px;
+  background: #3f4e65;
+  opacity: 0.1;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.rectangle:nth-child(3) {
+  position: absolute;
+  width: 16px;
+  height: 7px;
+  left: 691px;
+  top: 469px;
+  background: #3f4e65;
+  opacity: 0.1;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.rectangle:nth-child(4) {
+  position: absolute;
+  width: 16px;
+  height: 7px;
+  left: 713px;
+  top: 469px;
+  background: #3f4e65;
+  opacity: 0.1;
+  border-radius: 100px;
+  cursor: pointer;
+}

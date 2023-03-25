@@ -1,0 +1,177 @@
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.footer {
+  color: #ffffff;
+  height: 500px;
+  background-color: #3f4e65;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.footer__row {
+  display: flex;
+  gap: 90px;
+  margin-top: 71px;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__about {
+  max-width: 300px;
+  letter-spacing: 1px;
+
+}
+
+.about__text {
+  line-height: 21px;
+  font-size: 16px;
+  
+}
+
+.subscribe__text {
+  margin-top: 45px;
+  font-size: 12px;
+}
+
+.email {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 282px;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 36px;
+}
+.email__input {
+  font-size: 12px;
+  margin-left: 20px;
+  background-color: #ffffff;
+}
+
+.image__wrapper {
+  background-color: #ffc85e;
+  border-radius: 36px;
+  margin: 10px 10px 10px 0;
+}
+
+.email__image {
+  padding: 12px 16px 12px 16px;
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  
+}
+
+.footer__title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 20px;
+}
+
+.footer__link {
+  color: #ffffff;
+}
+
+.price_list__btn {
+  box-sizing: border-box;
+  background: #ffc85e;
+  border-radius: 79px;
+  padding: 24px 74px 21px 47px;
+  cursor: pointer;
+}
+
+.price_list__text {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.price_list__text::after {
+  content: url("../../image/download.svg");
+  position: absolute;
+  margin-left: 15px;
+}
+
+.connect {
+  margin-top: 20px;
+}
+
+.connect__img {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  line-height: 21px;
+}
+
+.tel {
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tel:hover {
+  text-decoration: underline;
+}
+
+.working_hours {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.callback {
+  color: #ffffff;
+  font-size: 10px;
+  text-decoration-line: underline;
+  opacity: 0.8;
+}
+
+.mail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.mail__text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+}
+.mail_subtext {
+	font-weight: 300;
+	opacity: 0.7;
+}
+
+.payment {
+	display: flex;
+	gap: 5px;
+	margin-top: 25px;
+}
+
+.footer__menu, .footer__categories, .footer__download, .footer__contacts {
+  letter-spacing: 0.05em;
+
+}

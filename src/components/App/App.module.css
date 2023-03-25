@@ -1,0 +1,17 @@
+.App {
+    display: flex;
+}
+
+.wrapper {
+    max-width: 1920px;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+    margin: 0 auto;
+}
+
+.content {
+	min-height: calc(100vh - 500px);
+}
+

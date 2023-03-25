@@ -1,0 +1,126 @@
+.location {
+  margin-top: 150px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.background {
+  position: relative;
+  background-image: url("../../../image/location.jpg");
+  height: 600px;
+}
+
+
+
+.block {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  display: flex;
+  width: 735px;
+  height: 424px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border-radius: 8px;
+}
+
+.information {
+    margin: 0 0 0 50px;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.contacts {
+  width: 292px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  color: #3f4e65;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #3f4e65;
+}
+
+.adress {
+  margin-top: 25px;
+}
+
+.adress__title {
+  font-weight: 700;
+  line-height: 18px;
+  color: #111111;
+}
+
+.adress__body {
+  margin-top: 10px;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.adress__text {
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+.line {
+  margin-top: 25px;
+  max-width: 292px;
+  opacity: 0.2;
+  border: 1px dashed #3f4e65;
+}
+
+.data {
+  margin-top: 25px;
+}
+
+.data__title {
+  font-weight: 700;
+  line-height: 18px;
+  color: #111111;
+}
+
+.data__body {
+  margin-top: 10px;
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.data__text {
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+.department {
+    margin-top: 22px;
+}
+
+.department__title {
+    font-weight: 700;
+    line-height: 18px;
+    color: #111111;
+  }
+  .department__tel {
+    margin-top: 10px;
+
+  }
+  .department__tel, .department__mail {
+    line-height: 18px;
+    color: #3f4e65;
+  }

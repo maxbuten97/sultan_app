@@ -1,0 +1,38 @@
+.breadcrumbs {
+  margin-top: 45px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.item {
+  font-weight: 300;
+  line-height: 17px;
+  color: #3f4e65;
+  letter-spacing: 0.02em;
+}
+
+.item:hover {
+    text-decoration: underline;
+  }
+
+.line {
+    height: 16px;
+    opacity: 0.3;
+border: 1px dashed #3F4E65;
+}
+
+.product__name {
+  font-weight: 300;
+  line-height: 17px;
+  color: #3f4e65;
+  opacity: 0.5;
+}
