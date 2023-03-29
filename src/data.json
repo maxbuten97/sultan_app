@@ -1,0 +1,310 @@
+{
+    "productsList": [
+        {
+            "id": "1",
+            "url": "https://lab-krasoty.ru/upload/iblock/2a2/2a2852ad8e3d726abb263429d5a7908a.jpg",
+            "name": "Гель-скраб для тела - Скраб для тела",
+            "typeSize": "мл",
+            "size": 250,
+            "barcode": "4604049097548",
+            "manufacture": "Morizo",
+            "brand": "Morizo",
+            "description": "тип кожи: для всех типов, эффект: отшелушивание, очищение, питание",
+            "price": 3255,
+            "category": [
+                "Body"
+            ]
+        },
+        {
+            "id": "2",
+            "url": "https://forsalon.ru/imgbg/uvlazhnyayushij-ukreplyayushij-krem-dlya-tela-vitality-spa-300-ml-big.jpg",
+            "name": "Увлажняющий укрепляющий крем для тела — Vitality Spa",
+            "typeSize": "мл",
+            "size": 300,
+            "barcode": "4670008494406",
+            "manufacture": "Aravia",
+            "brand": "Aravia",
+            "description": "Этот крем специально разработан для ухода за кожей тела любого типа, но особенно полезным он станет для сухой и увядающей кожи. В состав средства входят натуральные компоненты, такие как масло ши, гель алоэ и масло манго, которые глубоко увлажняют и питают кожу, при этом не забивают поры и не оказывают вредного воздействия",
+            "price": 4144,
+            "category": [
+                "Body",
+                "Hands",
+                "Legs"
+            ]
+        },
+        {
+            "id": "3",
+            "url": "https://forsalon.ru/imgbg/gel-skrab-protiv-vrosshih-volos-s-papainom-300-ml-1-big.jpg",
+            "name": "Гель-скраб против вросших волос с папаином",
+            "typeSize": "мл",
+            "size": 300,
+            "barcode": "4670008495595",
+            "manufacture": "Aravia",
+            "brand": "Aravia",
+            "description": "Профессиональное средство сочетает в себе свойства механического и ферментативного пилинга, подготавливает кожу к процедуре шугаринга либо депиляцией воском. Энзимы папайи и диоксид кремния оказывают сильный кератолитический эффект, удаляют ороговевшие клетки и придают гладкость. ",
+            "price": 4083,
+            "category": [
+                "Hair"
+            ]
+        },
+        {
+            "id": "4",
+            "url": "https://forsalon.ru/imgbg/krem-uspokaivayushchij-s-azulenom-dlya-lica-i-tela-200-ml-1-big.jpg",
+            "name": "Крем успокаивающий с азуленом для лица и тела",
+            "typeSize": "мл",
+            "size": 200,
+            "barcode": "4670008494239",
+            "manufacture": "Aravia",
+            "brand": "Aravia",
+            "description": "Средство обладает мощными успокаивающими и увлажняющими свойствами. Азулен восстанавливает и регенерирует, снимает покраснение. Экстракты эхинацеи пурпурной и листьев лесной малины способствуют снижению чувствительности. Триглицериды соевого масла усиливают защитную функцию кожи, удерживают влагу и препятствуют сухости.",
+            "price": 3382,
+            "category": [
+                "Legs",
+                "Hands",
+                "Body"
+            ]
+        },
+        {
+            "id": "5",
+            "url": "https://forsalon.ru/imgbg/blesk-balzam-dlya-gladkosti-i-bleska-volos-otium-diamond-200-ml-big.jpg",
+            "name": "Блеск-бальзам Estel Otium Diamond для гладкости и блеска волос",
+            "typeSize": "мл",
+            "size": 200,
+            "barcode": "4606453046525",
+            "manufacture": "Estel",
+            "brand": "Estel",
+            "description": "Блеск-бальзам с коллагеном восстанавливает волосы, придаёт гладкость и сияние. Обладает антистатическим действием.",
+            "price": 4780,
+            "category": [
+                "Hair"
+            ]
+        },
+        {
+            "id": "6",
+            "url": "https://forsalon.ru/imgbg/krem-kondicioner-protiv-lomkosti-100-ml-big.jpg",
+            "name": "Крем-кондиционер против ломкости",
+            "typeSize": "мл",
+            "size": 100,
+            "barcode": "4620753725645",
+            "manufacture": "Ollin",
+            "brand": "Ollin",
+            "description": "Крем-кондиционер на основе экстракта бамбука обладает нежнейшей текстурой, обеспечивает мгновенное восстановление сухих, ломких и секущихся волос. Средство оказывает интенсивное укрепляющее и тонизирующее воздействие, стимулирует естественный синтез гиалуроновой кислоты.",
+            "price": 4326,
+            "category": [
+                "Hair"
+            ]
+        },
+        {
+            "id": "7",
+            "url": "https://forsalon.ru/imgbg/balzam-dlya-ruk-alpha-marine-90-ml-1-big.jpg",
+            "name": "Бальзам для рук — Alpha Marine",
+            "typeSize": "мл",
+            "size": 90,
+            "barcode": "4606453067124",
+            "manufacture": "Estel",
+            "brand": "Estel",
+            "description": "Средство моментально восстанавливает и увлажняет кожу рук, успокаивает и снимает покраснение. Обладает хорошей консистенцией и быстро впитывается. Не оставляет неприятного ощущения липкости.",
+            "price": 3509,
+            "category": [
+                "Hands"
+            ]
+        },
+        {
+            "id": "8",
+            "url": "https://forsalon.ru/imgbg/tonalnyj-krem-dlya-lica-21-light-beige-big.jpg",
+            "name": "Тональный крем для лица — 21 Light Beige",
+            "typeSize": "мл",
+            "size": 40,
+            "barcode": "8809450012715",
+            "manufacture": "Esthetic House",
+            "brand": "Esthetic House",
+            "description": "Тональный BB-крем для лица обладает лёгкой приятной текстурой, которая равномерно распределяется на коже. Обеспечивает идеальный ровный тон и рельеф кожи. Ухаживающие компоненты оказывают глубокое увлажняющее воздействие, защищают от вредного УФ-излучения, повреждений и ожогов.",
+            "price": 8409,
+            "category": [
+                "Face"
+            ]
+        },
+        {
+            "id": "9",
+            "url": "https://forsalon.ru/imgbg/765774.jpg",
+            "name": "BB крем Collagen & Luxury Gold BB Cream",
+            "typeSize": "мл",
+            "size": 50,
+            "barcode": "8809331318875",
+            "manufacture": "3W CLINIC",
+            "brand": "3W CLINIC",
+            "description": "BB крем Collagen & Luxury Gold, 50 мл – это регенерирующее средство, которое включает в себя все функции ухода, разглаживания кожи и увлажнения. В составе продукта имеется коллаген гидролизованный. Именно он способствует повышению тургора кожи, делает ее упругой, разглаживает морщинки, дарит моментальный лифтинг и запускает на глубинном уровне выработку коллагена организмом.",
+            "price": 9377,
+            "category": [
+                "Face"
+            ]
+        },
+        {
+            "id": "10",
+            "url": "https://forsalon.ru/imgbg/krem-dlya-zagara-v-solyarii-s-maslom-apelsina-ekstraktom-aloe-i-bronzatorami-sunrise-125-ml-big.jpg",
+            "name": "Крем для загара в солярии — Sunrise",
+            "typeSize": "мл",
+            "size": 125,
+            "barcode": "4630010602312",
+            "manufacture": "SolBianca",
+            "brand": "SolBianca",
+            "description": "Средство с лёгкой консистенцией и нежным ароматом на основе натурального экстракта алоэ и масла апельсина дарит коже мгновенный насыщенный загар, гладкость и шелковистость. Растительные экстракты, эфирные масла (грецкий орех, кокос, авокадо) и витамины в составе обеспечивают глубокое увлажнение и интенсивное питание, разглаживая и подтягивая её.",
+            "price": 2147,
+            "category": [
+                "Sun"
+            ]
+        },
+        {
+            "id": "11",
+            "url": "https://forsalon.ru/imgbg/krem-dlya-zagara-v-solyarii-dlya-nog-s-maslom-kofe-maslom-shi-i-bronzatorami-sweet-legs-125-ml-big.jpg",
+            "name": "Крем для загара в солярии — Sweet Legs",
+            "typeSize": "мл",
+            "size": 125,
+            "barcode": "4630010602350",
+            "manufacture": "SolBianca",
+            "brand": "SolBianca",
+            "description": "Крем для загара ног с лёгкой консистенцией и нежным ароматом на основе натуральных масел кофе, ши и бронзаторами дарит коже ног мгновенный насыщенный загар, ухаживает за ней, разглаживает и оказывает антицеллюлитное воздействие. Растительные экстракты, эфирные масла и витамины в составе улучшают клеточный метаболизм, усиливают дренажный эффект.",
+            "price": 2147,
+            "category": [
+                "Sun",
+                "Legs"
+            ]
+        },
+        {
+            "id": "12",
+            "url": "https://forsalon.ru/imgbg/gel-dlya-britya-alpha-marine-100-ml-1-big.jpg",
+            "name": "Гель для бритья — Alpha Marine",
+            "typeSize": "мл",
+            "size": 100,
+            "barcode": "4606453067087",
+            "manufacture": "Estel",
+            "brand": "Estel",
+            "description": "Glisser-гель с выраженным увлажняющим воздействием обеспечивает комфорт и лёгкое бережное бритьё. Позволяет видеть зону бритья и дарит тонус и приятную свежесть.",
+            "price": 3509,
+            "category": [
+                "Shave"
+            ]
+        },
+        {
+            "id": "13",
+            "url": "https://forsalon.ru/imgbg/gel-maslo-dlya-britya-genwood-100-ml-big.jpg",
+            "name": "Гель-масло для бритья — Genwood",
+            "typeSize": "мл",
+            "size": 100,
+            "barcode": "4606453062280",
+            "manufacture": "Estel",
+            "brand": "Estel",
+            "description": "Гель-масло обеспечивает комфорт и гладкость при бритье, ухаживает за кожей. Подходит для чувствительной кожи.",
+            "price": 4658,
+            "category": [
+                "Shave"
+            ]
+        },
+        {
+            "id": "14",
+            "url": "https://forsalon.ru/imgbg/skrab-dlya-tela-s-kozim-molokom-touch-my-body-goat-milk-body-scrub-100-ml-big.jpg",
+            "name": "Скраб для тела с козьим молоком — Touch My Body Goat Milk Body Scrub",
+            "typeSize": "мл",
+            "size": 100,
+            "barcode": "8809450011763",
+            "manufacture": "Esthetic House",
+            "brand": "Esthetic House",
+            "description": "Скраб, в основе которого содержится козье молоко и косточки грецкого ореха, тщательно очищает кожу от отмерших клеток, питает, придаёт гладкость и здоровый вид в целом. Протеины, молочные жиры и витамин B интенсивно увлажняют и смягчают, улучшают упругость.",
+            "price": 2057,
+            "category": [
+                "Body"
+            ]
+        },
+        {
+            "id": "15",
+            "url": "https://forsalon.ru/imgbg/sos-krem-estel-otium-winteria-dlya-ruk-50-ml-big.jpg",
+            "name": "Sos-крем Estel Otium Winteria для рук",
+            "typeSize": "мл",
+            "size": 50,
+            "barcode": "4606453072746",
+            "manufacture": "Estel",
+            "brand": "Estel",
+            "description": "Крем бережно ухаживает за кожей рук, способствует восстановлению естественного защитного слоя, дарит мягкость и защищает от негативных воздействий окружающей среды.",
+            "price": 2420,
+            "category": [
+                "Hands"
+            ]
+        },
+        {
+            "id": "16",
+            "url": "https://forsalon.ru/imgbg/krem-dlya-ruk-s-ekstraktom-rozy-rose-hand-cream-100-ml-big.jpg",
+            "name": "Крем для рук с экстрактом розы — Rose Hand Cream",
+            "typeSize": "мл",
+            "size": 100,
+            "barcode": "8809311916220",
+            "manufacture": "Nanamus",
+            "brand": "Nanamus",
+            "description": "Корейский крем для рук с натуральным экстрактом розы. В состав также входят экстракты розмарина, лаванды, мяты, мелиссы и другие растительные ингредиенты.",
+            "price": 1512,
+            "category": [
+                "Hands"
+            ]
+        },
+        {
+            "id": "17",
+            "url": "https://forsalon.ru/imgbg/micellyarnaya-voda-5-v-1-445-ml-big.jpg",
+            "name": "Мицеллярная вода 5 в 1",
+            "typeSize": "мл",
+            "size": 445,
+            "barcode": "4815412000595",
+            "manufacture": "Bio World",
+            "brand": "Bio World",
+            "description": "Многофункциональная мицеллярная вода идеально подойдёт для ухода за сухой и очень чувствительной кожей. Бережно очищает от любого вида макияжа (в т.ч. водостойкого), не сушит и не раздражает, не оставляет неприятного ощущения стягивания и жирной плёнки на лице. ",
+            "price": 3587,
+            "category": [
+                "Face"
+            ]
+        }
+    ],
+    "careCategories": [
+        {
+            "category": "Body",
+            "name": "Уход за телом"
+        },
+        {
+            "category": "Hands",
+            "name": "Уход за руками"
+        },
+        {
+            "category": "Legs",
+            "name": "Уход за ногами"
+        },
+        {
+            "category": "Face",
+            "name": "Уход за лицом"
+        },
+        {
+            "category": "Hair",
+            "name": "Уход за волосами"
+        },
+        {
+            "category": "Sun",
+            "name": "Средства для загара"
+        },
+        {
+            "category": "Shave",
+            "name": "Средства для бритья"
+        },
+        {
+            "category": "GiftBox",
+            "name": "Подарочные наботы"
+        },
+        {
+            "category": "HygieneProducts",
+            "name": "Гигиеническая продукция"
+        },
+        {
+            "category": "OralHygiene",
+            "name": "Гигиена полости рта"
+        },
+        {
+            "category": "PaperProducts",
+            "name": "Бумажная продукция"
+        }
+    ]
+}

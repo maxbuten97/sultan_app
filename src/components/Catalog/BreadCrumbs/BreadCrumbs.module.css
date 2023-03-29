@@ -36,3 +36,32 @@
   border: 1px dashed #3f4e65;
   opacity: 0.3;
 }
+
+@media (max-width: 945px) {
+  .container {
+    max-width: 725px;
+  }
+
+  .breadcrumbs {
+    margin-top: 25px;
+  }
+  
+  .row {
+    gap: 10px;
+  }
+  
+  .item {
+    font-size: 12px;
+    line-height: 13px;
+  }
+  
+  .categories__select {
+    font-size: 12px;
+    line-height: 13px;
+  }
+  
+  .line {
+    height: 14px;
+  }
+
+}

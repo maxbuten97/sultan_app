@@ -108,3 +108,78 @@
   border-radius: 100px;
   cursor: pointer;
 }
+
+
+@media (max-width: 945px) {
+  .brands {
+    margin-top: 50px;
+  }
+  .container {
+    max-width: 725px;
+  }
+  .title {
+    font-size: 28px;
+    line-height: 20px;
+  }
+  
+  .subtitle {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .list {
+    margin-top: 30px;
+  }
+  
+  
+  .image {
+    height: 40px;
+    max-width: 90px;
+
+  }
+  
+  .rectangle_active {
+    position: absolute;
+    width: 26px;
+    height: 5px;
+    left: 295px;
+    bottom: -20px;
+    background: #ffc85e;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  
+  .rectangle:nth-child(2) {
+    position: absolute;
+    width: 16px;
+    height: 5px;
+    left: 329px;
+    bottom: -20px;
+    background: #3f4e65;
+    opacity: 0.1;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  
+  .rectangle:nth-child(3) {
+    position: absolute;
+    width: 16px;
+    height: 5px;
+    left: 351px;
+    bottom: -20px;
+    background: #3f4e65;
+    opacity: 0.1;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+  
+  .rectangle:nth-child(4) {
+    position: absolute;
+    width: 16px;
+    height: 5px;
+    left: 373px;
+    bottom: -20px;
+  }
+
+}

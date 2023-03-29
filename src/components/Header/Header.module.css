@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  max-width: 1366px;
+  max-width: 1370px;
   margin: 0 auto;
 }
 .header {
@@ -20,6 +20,7 @@
 .email {
   padding: 14px 0 13px 0;
   display: flex;
+  align-items: center;
 }
 
 .imgWrapper {
@@ -67,4 +68,44 @@
 .menu__return:hover,
 .menu__contacts:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 945px) {
+  .container {
+    max-width: 725px;
+  }
+
+  .header__row {
+    font-size: 10px;
+  }
+  .header__info {
+    gap: 5px;
+  }
+
+  .adress,
+  .email {
+    padding: 10px 0 10px 0;
+  }
+
+  .imgWrapper {
+    margin-right: 5px;
+  }
+
+  .line {
+    height: 29px;
+  }
+
+  .line_small {
+    height: 19px;
+  }
+
+  .adress__text,
+  .email__text {
+    line-height: 14px;
+  }
+  .subtext {
+  }
+  .header__menu {
+    gap: 10px;
+  }
 }

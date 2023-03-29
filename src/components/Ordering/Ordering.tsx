@@ -85,7 +85,7 @@ const Ordering = () => {
                     <div className={s.info__cards__title}>
                       {" "}
                       <span className={s.payment}>
-                        <img src={paymentSVG} alt="payment" />
+                        <img className={s.payment__img} src={paymentSVG} alt="payment" />
                       </span>{" "}
                       Оплата
                     </div>
@@ -99,7 +99,7 @@ const Ordering = () => {
                   <div className={s.info__cards__content}>
                     <div className={s.info__cards__title}>
                       <span className={s.delivery}>
-                        <img src={deliverySVG} alt="delivery" />
+                        <img className={s.delivery__img} src={deliverySVG} alt="delivery" />
                       </span>
                       Доставка
                     </div>
@@ -154,7 +154,7 @@ const Ordering = () => {
                   </div>
                   <div className={s.order__content}>
                     <div className={s.order__volume}>
-                      <img src={bottleSVG} alt="bottle" />
+                      <img className={s.bottle__image} src={bottleSVG} alt="bottle" />
                       <div className={s.volume__text}>450мл</div>
                     </div>
                     <div className={s.product__name}>

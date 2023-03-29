@@ -32,6 +32,11 @@
 .product__row {
   display: flex;
   align-items: center;
+  gap: 5px;
+}
+
+.product_img {
+  max-width: 224px;
 }
 
 .product__body {
@@ -58,8 +63,12 @@
   font-size: 30px;
   line-height: 36px;
   color: #111111;
+  cursor: pointer;
 }
+.product__name:hover {
+  text-decoration: underline;
 
+}
 .product__info {
   font-weight: 300;
   font-size: 12px;
@@ -147,4 +156,122 @@
   font-size: 30px;
   line-height: 39px;
   color: #111111;
+}
+
+@media(max-width: 945px) {
+  .container {
+    max-width: 725px;
+  }
+  
+  .basket__title {
+    margin-top: 25px;
+    font-size: 28px;
+    line-height: 25px;
+  }
+  
+  .line {
+    margin-top: 25px;
+  }
+  
+  .products__list {
+    margin-top: 25px;
+  }
+  
+  .product__item {
+    margin-top: 25px;
+    justify-content: space-around;
+
+  }
+  
+  .product__row {
+    gap: 5px;
+  }
+  
+  .product_img {
+    max-width: 160px;
+  }
+  
+  .product__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 20px;
+    width: 210px;
+  }
+  
+  .volume__block {
+    display: flex;
+    gap: 5px;
+  }
+  .bottle {
+    width: 8px;
+  }
+  .volume {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  
+  .product__name {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  
+  .product__info {
+    font-size: 11px;
+    line-height: 16px;
+  }
+  
+  .line__small {
+    height: 49px;
+  }
+  
+  .quantity {
+    gap: 10px;
+    margin-left: 11px;
+    margin-right: 11px;
+  }
+  
+  .down_btn {
+    font-size: 12px;
+    padding: 2px 10px 4px 10px;
+  }
+  
+  .number {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .up_btn {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+  
+  .price {
+    margin: 0 11px 0 11px;
+    font-size: 16px;
+    line-height: 39px;
+  }
+  .delete__img{
+    width: 15px;
+  }
+  .basket__delete {
+    margin-left: 11px;
+    padding: 14px;
+  }
+  
+  .checkout__block {
+    margin-top: 20px;
+  }
+  
+  .checkout__btn {
+    padding: 14px 30px 14px 30px;
+    line-height: 17px;
+    font-size: 12px;
+  }
+  
+  .checkout__sum {
+    margin: 0 44px 0 44px;
+    font-size: 20px;
+  }
+  
 }

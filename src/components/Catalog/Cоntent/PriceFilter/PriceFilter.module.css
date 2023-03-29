@@ -1,0 +1,33 @@
+.price__filter {
+  margin-top: 10px;
+}
+
+.price__title {
+  line-height: 21px;
+  color: #3f4e65;
+}
+
+.price {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 945px) {
+  .price__filter {
+    margin-top: 5px;
+  }
+  
+  .price__title {
+    font-size: 10px;
+    line-height: 14px;
+    color: #3f4e65;
+  }
+  
+  .price {
+    margin-top: 10px;
+    gap: 5px;
+  }
+ }

@@ -14,8 +14,6 @@
   height: 600px;
 }
 
-
-
 .block {
   position: absolute;
   left: 30px;
@@ -29,10 +27,10 @@
 }
 
 .information {
-    margin: 0 0 0 50px;
-    display: flex;
-    align-items: center;
-    gap: 45px;
+  margin: 0 0 0 50px;
+  display: flex;
+  align-items: center;
+  gap: 45px;
 }
 
 .contacts {
@@ -108,19 +106,127 @@
 }
 
 .department {
-    margin-top: 22px;
+  margin-top: 22px;
 }
 
 .department__title {
-    font-weight: 700;
-    line-height: 18px;
-    color: #111111;
+  font-weight: 700;
+  line-height: 18px;
+  color: #111111;
+}
+.department__tel {
+  margin-top: 10px;
+}
+.department__tel,
+.department__mail {
+  line-height: 18px;
+  color: #3f4e65;
+}
+
+@media (max-width: 945px) {
+  .container {
+    max-width: 725px;
   }
-  .department__tel {
-    margin-top: 10px;
+  .location {
+    margin-top: 75px;
+  }
+
+  .background {
+    height: 300px;
+  }
+
+  .block {
+    width: 375px;
+
+    height: 200px;
+  }
+
+  .information {
+    margin: 0 0 0 15px;
+    gap: 5px;
+    width: 375px;
 
   }
-  .department__tel, .department__mail {
-    line-height: 18px;
+
+  .contacts {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 14px;
+  }
+
+  .subtitle {
+    margin-top: 15px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 14px;
     color: #3f4e65;
   }
+
+  .adress {
+    margin-top: 15px;
+  }
+
+  .adress__title {
+    font-weight: 700;
+    line-height: 12px;
+    color: #111111;
+  }
+
+  .adress__body {
+    margin-top: 5px;
+    gap: 7px;
+  }
+
+  .adress__text {
+    font-size: 10px;
+    line-height: 14px;
+    color: #3f4e65;
+  }
+
+  .line {
+    margin-top: 5px;
+    max-width: 230px;
+  }
+
+  .data {
+    margin-top: 5px;
+  }
+
+  .data__title {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .data__body {
+    margin-top: 5px;
+    gap: 10px;
+  }
+
+  .data__text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .department {
+    margin-top: 0px;
+  }
+
+  .department__title {
+    line-height: 18px;
+  }
+  .department__tel {
+    margin-top: 5px;
+    font-size: 10px;
+  }
+  .department__tel,
+  .department__mail {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}

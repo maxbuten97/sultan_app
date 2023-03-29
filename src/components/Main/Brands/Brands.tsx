@@ -17,10 +17,10 @@ const Brands = () => {
       <div className={s.container}>
         <div className={s.row}>
           <div className={s.title}>
-            <span className={s.text}>Категории</span> товаров
+            <span className={s.text}>Лучшие</span> Товары
           </div>
           <div className={s.subtitle}>
-            10 000+ ходовых позиций по спецмальным ценам
+            От ведущих мировых брендов
           </div>
           <div className={s.list}>
             <div className={s.item}>

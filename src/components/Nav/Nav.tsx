@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Nav.module.css";
 import operatorPNG from "../../image/operator.png";
 const logoSVG: string = require("../../image/logo_sultan.svg").default;
@@ -14,7 +15,9 @@ const Nav = () => {
           </div>
           <div className={s.catalog}>
             <div className={s.catalog__btn}>
+              <NavLink to='/catalog'>
               <div className={s.catalog__text}>Каталог</div>
+              </NavLink>
             </div>
           </div>
           <div className={s.search}>
@@ -52,6 +55,7 @@ const Nav = () => {
             </div>
           </div>
           <div className={s.line}></div>
+          <NavLink to='/basket'>
           <div className={s.basket}>
             <div className={s.basket__imgWrapper}>
               <img className={s.basket__img} src={basketSVG} alt="basket" />
@@ -62,6 +66,7 @@ const Nav = () => {
                 <span className={s.sum}>12 478 ₸</span>
             </div>
           </div>
+          </NavLink>
         </div>
       </div>
     </div>

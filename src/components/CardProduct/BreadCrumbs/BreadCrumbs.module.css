@@ -21,13 +21,13 @@
 }
 
 .item:hover {
-    text-decoration: underline;
-  }
+  text-decoration: underline;
+}
 
 .line {
-    height: 16px;
-    opacity: 0.3;
-border: 1px dashed #3F4E65;
+  height: 16px;
+  opacity: 0.3;
+  border: 1px dashed #3f4e65;
 }
 
 .product__name {
@@ -35,4 +35,32 @@ border: 1px dashed #3F4E65;
   line-height: 17px;
   color: #3f4e65;
   opacity: 0.5;
+}
+
+@media (max-width: 945px) {
+  .breadcrumbs {
+    margin-top: 25px;
+  }
+
+  .container {
+    max-width: 725px;
+  }
+
+  .row {
+    gap: 5px;
+  }
+
+  .item {
+    font-size: 10px;
+    line-height: 10px;
+  }
+
+  .line {
+    height: 12px;
+  }
+
+  .product__name {
+    font-size: 10px;
+    line-height: 10px;
+  }
 }

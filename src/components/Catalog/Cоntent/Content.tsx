@@ -1,246 +1,146 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Content.module.css";
 import airWickPNG from "../../../image/airwick.png";
 import masterFreshPNG from "../../../image/masterFresh.png";
 import sibiarPNG from "../../../image/Sibiar.png";
 import cottonClubPNG from "../../../image/cottonClub.png";
 import camayPNG from "../../../image/camay.png";
-import productPNG from "../../../image/product.png";
-const bottleSVG: string = require("../../../image/bottle.svg").default;
-const searchSVG: string = require("../../../image/search.svg").default;
-const basketDeleteSVG: string = require("../../../image/basket_delete.svg").default;
+import ProductItem from "../ProductItem/ProductItem";
+import { IProduct } from "../../../shared/interfaces/ProductInterface";
+import { CareCategoriesEnum } from "../../../shared/enums/CareCategoriesEnum";
+import { ICareCategory } from "../../../shared/interfaces/CareCategoryInterface";
+import ManufactureFilter from "../ManufactureFilter/ManufactureFilter";
+import CareCategory from "./CareCategory/CareCategory";
+import PriceFilter from "./PriceFilter/PriceFilter";
+const basketDeleteSVG: string =
+  require("../../../image/basket_delete.svg").default;
 
-const Content = () => {
+const Content = (props: {
+  selectedCareCategory: string;
+  setSelectedCareCategory: (category: string) => void;
+  storage: IProduct[];
+  careCategories: ICareCategory[];
+  deleteProduct: (product: IProduct) => void;
+  isAdmin: boolean;
+  sorted: string;
+}) => {
+  const [priceMinFilter, setPriceMinFilter] = useState<number>();
+  const [priceMaxFilter, setPriceMaxFilter] = useState<number>();
+  const [manufactureFilter, setManufactureFilter] = useState<string[]>([]);
+
+  const manufacturesSet = new Set(
+    props.storage.map((product) => {
+      return product.manufacture;
+    })
+  );
+
+  const manufactures: string[] = Array.from(manufacturesSet.values());
+
+  function changeManufactureFilter(manufacture: string) {
+    if (manufactureFilter.includes(manufacture)) {
+      setManufactureFilter(manufactureFilter.filter((m) => m !== manufacture));
+    } else {
+      setManufactureFilter([manufacture]);
+    }
+  }
+
+  function showContent() {
+    let newProducts = props.storage;
+    /**Фильтрация по выбранной категории ухода */
+    if (props.selectedCareCategory) {
+      newProducts = newProducts.filter((item) =>
+        item.category.includes(props.selectedCareCategory)
+      );
+    }
+
+    if (manufactureFilter.length > 0) {
+      manufactureFilter.forEach((item) => {
+        newProducts = newProducts.filter(
+          (product) => product.manufacture === item
+        );
+      });
+    }
+
+    /**Фильтрация по минимальному значению */
+    if (priceMinFilter) {
+      newProducts = newProducts.filter((item) => item.price > priceMinFilter);
+    }
+    /**Фильтрация по максимальному значению */
+    if (priceMaxFilter) {
+      newProducts = newProducts.filter((item) => item.price < priceMaxFilter);
+    }
+    /**Сортировка от А до Я */
+    if (props.sorted === "nameDesc") {
+      newProducts
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .sort((a, b) => a.brand.localeCompare(b.brand));
+    }
+    /**Сортировка от Я до А */
+    if (props.sorted === "nameAsc") {
+      newProducts
+        .sort((a, b) => b.name.localeCompare(a.name))
+        .sort((a, b) => b.brand.localeCompare(a.brand));
+    }
+    /**Сортировка цены min */
+    if (props.sorted === "priceDesc") {
+      newProducts.sort((a, b) => a.price - b.price);
+    }
+    /**Сортировка цены max */
+    if (props.sorted === "priceAsc") {
+      newProducts.sort((a, b) => b.price - a.price);
+    }
+    /**Условие, если пустой массив, вернуть результат не найден */
+    if (newProducts.length === 0) {
+      return <div className={s.nonResult}>Результатов не найдено...</div>;
+    }
+    return newProducts.map((item) => {
+      return (
+        <ProductItem
+          item={item}
+          key={item.id}
+          deleteProduct={props.deleteProduct}
+          isAdmin={props.isAdmin}
+        />
+      );
+    });
+  }
+
   return (
     <div className={s.content}>
       <div className={s.container}>
         <div className={s.column}>
           <div className={s.sidebar_filter}>
             <div className={s.sidebar__title}>Подбор по параметрам</div>
-            <div className={s.price__filter}>
-              <div className={s.price__title}>
-                Цена <span className={s.strong}>₸</span>{" "}
-              </div>
-              <div className={s.price}>
-                <div className={s.price__input_from}>0</div>
-                <div className={s.delimiter}>-</div>
-                <div className={s.price__input_to}>10 000</div>
+            <PriceFilter
+              setPriceMinFilter={setPriceMinFilter}
+              setPriceMaxFilter={setPriceMaxFilter}
+            />
+            <ManufactureFilter
+              manufactures={manufactures}
+              changeManufactureFilter={changeManufactureFilter}
+            />
+            <div className={s.view__buttons_block}>
+              <div className={s.view__button}>Показать</div>
+              <div className={s.basket__delete}>
+                <img
+                  className={s.basket__delete_img}
+                  src={basketDeleteSVG}
+                  alt="basket_delete"
+                />
               </div>
             </div>
-            <div className={s.manufacturer__filter}>
-              <div className={s.manufacturer__title}>Производитель</div>
-              <div className={s.search}>
-                <div className={s.input__wrapper}>
-                  <input
-                    className={s.search__input}
-                    type="text"
-                    placeholder="Поиск..."
-                  />
-                </div>
-                <div className={s.image__wrapper}>
-                  <img
-                    className={s.search__image}
-                    src={searchSVG}
-                    alt="search"
-                  />
-                </div>
-              </div>
-              <div className={s.checkbox__block}>
-                <div className={s.checkbox__wrapper}>
-                  <input
-                    className={s.chekbox}
-                    type="checkbox"
-                    name="a"
-                    value=""
-                  />
-                  <div className={s.checkbox__name}>Grifon</div>
-                  <div className={s.remainder}>(56)</div>
-                </div>
-                <div className={s.checkbox__wrapper}>
-                  <input
-                    className={s.chekbox}
-                    type="checkbox"
-                    name="a"
-                    value=""
-                  />
-                  <div className={s.checkbox__name}>Boyscout</div>
-                  <div className={s.remainder}>(66)</div>
-                </div>
-                <div className={s.checkbox__wrapper}>
-                  <input
-                    className={s.chekbox}
-                    type="checkbox"
-                    name="a"
-                    value=""
-                  />
-                  <div className={s.checkbox__name}>Paclan</div>
-                  <div className={s.remainder}>(166)</div>
-                </div>
-                <div className={s.checkbox__wrapper}>
-                  <input
-                    className={s.chekbox}
-                    type="checkbox"
-                    name="a"
-                    value=""
-                  />
-                  <div className={s.checkbox__name}>Булгари Грин</div>
-                  <div className={s.remainder}>(21)</div>
-                </div>
-              </div>
-              <div className={s.view}>Показать все</div>
-            </div>
-                <div className={s.view__buttons_block}>
-                    <div className={s.view__button}>Показать</div>
-                    <div className={s.basket__delete}>
-                        <img src={basketDeleteSVG} alt="basket_delete" />
-                    </div>
-                </div>
             <div className={s.categories__filter}>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>
-              {/* Бесполезные категории */}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>{" "}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>{" "}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>{" "}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>{" "}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>{" "}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>{" "}
-              <div className={s.line}></div>
-              <div className={s.categories__title}>Уход за телом</div>
-              <div className={s.categories__list}>
-                <div className={s.categories__item}>Эпиляция и депиляция</div>
-                <div className={s.categories__item}>
-                  Средства для ванны и душа
-                </div>
-                <div className={s.categories__item}>Скрабы, пилинги и пр.</div>
-                <div className={s.categories__item}>
-                  Мочалки и губки для тела
-                </div>
-                <div className={s.categories__item}>Кремы, лосьоны, масла</div>
-                <div className={s.categories__item}>Интимный уход</div>
-                <div className={s.categories__item}>
-                  Дезодоранты, антиперспиранты
-                </div>
-                <div className={s.categories__item}>Гели для душа</div>
-              </div>
-              {/* Заканчиваются тут */}
+              {props.careCategories.map((careCategory, index) => {
+                return (
+                  <CareCategory
+                    careCategory={careCategory}
+                    key={index}
+                    selectedCareCategory={props.selectedCareCategory}
+                    setSelectedCareCategory={props.setSelectedCareCategory}
+                  />
+                );
+              })}
             </div>
             <div className={s.line}></div>
             <div className={s.brands}>
@@ -289,381 +189,36 @@ const Content = () => {
           </div>
 
           <div className={s.product__list}>
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>
-            {/* 7 бесполезных карточек */}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>
-            <div className={s.list__item}>
-              <div className={s.imgWrapper_product}>
-                <img
-                  className={s.product__image}
-                  src={productPNG}
-                  alt="product"
-                />
-              </div>
-              <div className={s.product__info}>
-                <div className={s.product__size}>
-                  <div className={s.imgWrapper_bottle}>
-                    <img
-                      className={s.size__image}
-                      src={bottleSVG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.size__text}>450 мл</div>
-                </div>
-                <div className={s.product__name}>
-                  <span className={s.strong}>AOS</span> Ср-во для мытья посуды
-                  Апельсин+мята
-                </div>
-                <div className={s.product__characteristics}>
-                  <div className={s.product__barcode}>
-                    <span className={s.gray}>Штрихкод:</span> 4604049097548
-                  </div>
-                  <div className={s.product__manufacturer}>
-                    <span className={s.gray}>Производитель:</span> Нэфис
-                  </div>
-                  <div className={s.product__brand}>
-                    <span className={s.gray}>Бренд:</span> AOS
-                  </div>
-                </div>
-                <div className={s.product__price_block}>
-                  <div className={s.product__price}>48,76 ₸</div>
-                  <div className={s.product__btn}>В корзину</div>
-                </div>
-              </div>
-            </div>
-            <div className={s.pagination__block}>
-            <ul className={s.pagination}>
-            <li><div className={s.arrow}>❮</div></li>
-            <li><a className={s.active}href="/">1</a></li>
-            <li><a href="/">2</a></li>
-            <li><a href="/">3</a></li>
-            <li><a href="/">4</a></li>
-            <li><a href="/">5</a></li>
-            <li><div className={s.arrow}>❯</div></li>
-                </ul>
-            </div>
+            {showContent()}
 
+            <div className={s.pagination__block}>
+              {/* <ul className={s.pagination}>
+                <li>
+                  <div className={s.arrow}>❮</div>
+                </li>
+                <li>
+                  <a className={s.active} href="/">
+                    1
+                  </a>
+                </li>
+                <li>
+                  <a href="/">2</a>
+                </li>
+                <li>
+                  <a href="/">3</a>
+                </li>
+                <li>
+                  <a href="/">4</a>
+                </li>
+                <li>
+                  <a href="/">5</a>
+                </li>
+                <li>
+                  <div className={s.arrow}>❯</div>
+                </li>
+              </ul> */}
+            </div>
             {/* Заканчиваются тут */}
-            
           </div>
         </div>
       </div>

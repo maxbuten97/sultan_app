@@ -137,3 +137,111 @@
   margin-left: 5px;
   bottom: 20%;
 }
+
+
+
+@media (max-width: 945px) {
+  .container {
+    max-width: 725px;
+  }
+  .promotion {
+    margin-top: 30px;
+  }
+
+  .promotion__title {
+    font-size: 28px;
+  }
+
+  .promotion__text {
+    font-weight: 700;
+    color: #ffc86e;
+  }
+
+  .product__list {
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  .list__item {
+    padding: 20px 15px;
+  }
+
+  .popular {
+    font-size: 7px;
+    line-height: 12px;
+    max-width: 76px;
+    padding: 4px 0 3px 0;
+  }
+
+  .product__image {
+    max-height: 120px;
+  }
+
+  .product__info {
+    font-size: 10px;
+    margin: 4px 6px 0 8px;
+    max-width: 190px;
+  }
+
+  .imgWrapper_product {
+    text-align: center;
+    margin-top: -10px;
+  }
+  .size__image {
+    max-height: 12px;
+  }
+  .product__size {
+    display: flex;
+    gap: 5px;
+  }
+
+  .size__text {
+    font-size: 8px;
+    line-height: 16px;
+    color: #3f4e65;
+  }
+
+  .product__name {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .product__characteristics {
+    margin-top: 10px;
+    gap: 3px;
+    line-height: 15px;
+  }
+
+  .gray {
+    font-size: 9px;
+  }
+
+  .product__price_block {
+    gap: 0px;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .product__price {
+    font-size: 13px;
+  }
+
+  .product__btn {
+    padding: 10px 36px 10px 18px;
+    font-size: 9px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #ffffff;
+
+  }
+
+  .product__btn::after {
+    content: "";
+    background-image: url("../../../image/basket_item.svg");
+    bottom: 20%;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+  }
+}

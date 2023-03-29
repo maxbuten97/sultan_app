@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import s from "./BreadCrumbs.module.css";
 
 const BreadCrumbs = () => {
@@ -6,9 +7,9 @@ const BreadCrumbs = () => {
     <div className={s.breadcrumbs}>
       <div className={s.container}>
         <div className={s.row}>
-          <a href="/" className={s.item}>
+        <NavLink to="/" className={s.item}>
             Главная
-          </a>
+          </NavLink>
           <div className={s.line}></div>
           <a href="/" className={s.categories__select}>
             Корзина

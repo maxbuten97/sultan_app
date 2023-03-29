@@ -1,17 +1,24 @@
 .App {
-    display: flex;
+  display: flex;
 }
 
 .wrapper {
-    max-width: 1920px;
-	min-height: 100%;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-    margin: 0 auto;
+  max-width: 1920px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .content {
-	min-height: calc(100vh - 500px);
+  min-height: calc(100vh - 500px);
 }
 
+@media (max-width: 945px) {
+	.wrapper {
+		max-width: 945px;
+	  }
+	  .content {
+		min-height: calc(100vh - 250px);
+	  }
+}

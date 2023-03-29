@@ -1,0 +1,42 @@
+
+  .checkbox__wrapper {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .checkbox {
+    border: 0.5px solid #3f4e65;
+    border-radius: 1px;
+  }
+  
+  .checkbox__name {
+    margin-top: 5px;
+    line-height: 21px;
+    color: #3f4e65;
+  }
+  
+  .remainder {
+    font-size: 10px;
+    line-height: 15px;
+    color: #3f4e65;
+    text-align: center;
+  }
+
+  @media(max-width:945px) {
+    
+  .checkbox__wrapper {
+    gap: 5px;
+  }
+  
+  
+  .checkbox__name {
+    font-size: 12px;
+    margin-top: 5px;
+    line-height: 19px;
+  }
+  
+  .remainder {
+    font-size: 9px;
+    line-height: 15px;
+  }
+  }

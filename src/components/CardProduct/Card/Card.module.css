@@ -11,14 +11,23 @@
 .row {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  justify-content: space-between;
+}
+
+.card__item {
+  display: flex;
 }
 
 .product__card {
+  position: relative;
   max-width: 628px;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
+}
+
+.card__image {
+  max-width: 650px;
 }
 
 .flag_stock {
@@ -190,7 +199,7 @@
   font-size: 12px;
   line-height: 18px;
   color: #3f4e65;
-  display: none;
+  /* display: none; */
 }
 
 .menu .title {
@@ -241,7 +250,7 @@
   line-height: 21px;
   font-weight: 700;
   letter-spacing: 0.01em;
-  display: none;
+  /* display: none; */
 }
 
 .menu .title::after {
@@ -257,4 +266,212 @@
 
 .menu.open .characteries__text {
   display: block;
+}
+
+.admin__buttons {
+  position: absolute;
+  right: 0;
+  bottom: 900px;
+  display: flex;
+  gap: 10px;
+}
+
+.edit__button, .save__button {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #3f4e65;
+}
+
+.edit__button:hover, .save__button:hover {
+  background-color: #edecec;
+}
+
+.edit__button:active, .save__button:active {
+  background-color: #fff;
+}
+
+.input__admin {
+  margin-right: 5px;
+  background-color: #f4f4f4;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+@media (max-width: 945px) {
+  .card {
+    margin-top: 25px;
+  }
+
+  .container {
+    max-width: 725px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .card__item {
+    display: flex;
+  }
+
+  .product__card {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .card__image {
+    margin-top: 30px;
+    max-width: 300px;
+  }
+
+  .flag_stock {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .product__name {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .strong {
+    font-weight: 700;
+  }
+
+  .bottle {
+    width: 8px;
+  }
+  .product__volume {
+    gap: 5px;
+  }
+
+  .volume__text {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .price__block {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 39px;
+    color: #111111;
+  }
+
+  .quantity {
+    display: flex;
+    gap: 10px;
+  }
+
+  .down_btn {
+    padding: 3px 10px;
+  }
+
+  .number {
+    font-weight: 500;
+    line-height: 22px;
+    color: #3f4e65;
+  }
+
+  .up_btn {
+    padding: 3px 10px;
+  }
+
+  .basket__btn {
+    max-width: 100px;
+    padding: 18px 20px;
+  }
+
+  .basket__text {
+    font-size: 12px;
+  }
+
+  .basket__text::after {
+    content: "";
+    display: none;
+  }
+
+  .network {
+    margin-top: 20px;
+    height: 77px;
+    gap: 10px;
+  }
+
+  .share {
+    padding: 20px 15px 20px 15px;
+  }
+
+  .share__image {
+    height: 15px;
+  }
+
+  .delivery {
+    padding: 15px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+
+  .price_list {
+    font-size: 10px;
+    padding: 18px 25px 18px 10px;
+    line-height: 17px;
+  }
+
+  .price_list::after {
+    margin-left: 0px;
+  }
+
+  .characteries__block {
+    font-size: 12px;
+    margin-top: 15px;
+    line-height: 16px;
+  }
+
+  .gray {
+    font-size: 11px;
+  }
+  .small {
+    font-size: 10px;
+  }
+
+  .description__block {
+    margin-top: 25px;
+  }
+
+  .menu .description__text {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 15px;
+    /* display: none; */
+  }
+
+  .line {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .characteries__block__hidden {
+    margin-top: 15px;
+  }
+
+  .characteries__block2 {
+    margin-top: 15px;
+    line-height: 18px;
+  }
+
+  .menu .characteries__text {
+    line-height: 18px;
+    font-size: 12px;
+    /* display: none; */
+  }
 }

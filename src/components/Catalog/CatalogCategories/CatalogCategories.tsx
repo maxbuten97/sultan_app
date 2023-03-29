@@ -1,68 +1,64 @@
 import React from "react";
 import s from "./CatalogCategories.module.css";
+import { ICareCategory } from "../../../shared/interfaces/CareCategoryInterface";
+import CareCategoryItem from "../Cоntent/CareCategoryItem/CareCategoryItem";
+import SortingProductSelect from "./SortingProductSelect/SortingProductSelect";
 const burgerSVG: string = require("../../../image/burger.svg").default;
 const rectangleSVG: string =
   require("../../../image/rectangle_black.svg").default;
-const CatalogCategories = () => {
+
+const CatalogCategories = (props: {
+  selectedCareCategory: string;
+  setSelectedCareCategory: (category: string) => void;
+  careCategories: ICareCategory[];
+  isAdmin: boolean;
+  setIsAdmin: (isAdmin: boolean) => void;
+  sorted: string;
+  setSorted: (sorted: string) => void;
+}) => {
   return (
     <div className={s.catalog__categories}>
       <div className={s.container}>
+        <div className={s.adminCheckbox}>
+          <input
+            className={s.adminCheck}
+            onInput={(event) =>
+              props.setIsAdmin((event.target as HTMLInputElement).checked)
+            }
+            type="checkbox"
+          />
+          Admin mode
+        </div>
         <div className={s.header}>
           <div className={s.title}>Косметика и Гигиена</div>
           <div className={s.sorting}>
-            <div className={s.sorting__name}>
-              Сортировка: <span className={s.grey}>Название</span>
-            </div>
+            <SortingProductSelect sorted={props.sorted} setSorted={props.setSorted}/>
             <div className={s.view}>
               <div className={s.burger}>
-                <img src={burgerSVG} alt="burger" />
+                <img className={s.burger_image} src={burgerSVG} alt="burger" />
               </div>
               <div className={s.rectangle}>
-                <img src={rectangleSVG} alt="rectangle" />
+                <img
+                  className={s.rectangle_image}
+                  src={rectangleSVG}
+                  alt="rectangle"
+                />
               </div>
             </div>
           </div>
         </div>
         <div className={s.categories__block}>
           <div className={s.list}>
-            <div className={s.item}>
-              Уход <br /> за телом
-            </div>
-            <div className={s.item}>
-              Уход <br /> за руками
-            </div>
-            <div className={s.item}>
-              Уход <br /> за ногами
-            </div>
-            <div className={s.item}>
-              Уход <br /> за лицом
-            </div>
-            <div className={s.item}>
-              Уход <br /> за волосами
-            </div>
-            <div className={s.item}>
-              Средства <br /> для загара
-            </div>
-            <div className={s.item}>
-              Средства
-              <br /> для бритья
-            </div>
-            <div className={s.item}>
-              Подарочные
-              <br /> наборы
-            </div>
-            <div className={s.item}>
-              Гигиеническая
-              <br /> продукция
-            </div>
-            <div className={s.item}>
-              Гигиена
-              <br /> полости рта
-            </div>
-            <div className={s.item}>
-              Бумажная
-              <br /> продукция
-            </div>
+            {props.careCategories.map((careCategory, index) => {
+              return (
+                <CareCategoryItem
+                  careCategory={careCategory}
+                  selectedCareCategory={props.selectedCareCategory}
+                  setSelectedCareCategory={props.setSelectedCareCategory}
+                  key={index}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

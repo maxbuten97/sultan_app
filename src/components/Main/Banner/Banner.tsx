@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Banner.module.css";
 const Banner = () => {
   return (
@@ -15,9 +16,11 @@ const Banner = () => {
             <h2 className={s.subtitle}>оптом по кокчетаву и области</h2>
           </div>
           <div className={s.catalog}>
+          <NavLink to='/catalog'>
             <div className={s.catalog__btn}>
               <div className={s.catalog__text}>В Каталог</div>
             </div>
+            </NavLink>
           </div>
           <div className={s.advantages}>
             <div className={s.advantages__block}>

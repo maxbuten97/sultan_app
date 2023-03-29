@@ -82,10 +82,10 @@ const Footer = () => {
               <div className={s.connect__text}>Связь в мессенджерах:</div>
               <div className={s.connect__img}>
                 <div className={s.imgWrapper}>
-                  <img src={whatsappSVG} alt="WA" />
+                  <img className={s.social} src={whatsappSVG} alt="WA" />
                 </div>
                 <div className={s.imgWrapper}>
-                  <img src={telegramSVG} alt="TG" />
+                  <img className={s.social} src={telegramSVG} alt="TG" />
                 </div>
               </div>
             </div>
@@ -107,10 +107,10 @@ const Footer = () => {
             </div>
             <div className={s.payment}>
               <div className={s.payment__img}>
-                <img src={visaSVG} alt="visa" />
+                <img className={s.pay} src={visaSVG} alt="visa" />
               </div>
               <div className={s.payment__img}>
-                <img src={mastercardSVG} alt="mastercard" />
+                <img className={s.pay} src={mastercardSVG} alt="mastercard" />
               </div>
             </div>
           </div>
