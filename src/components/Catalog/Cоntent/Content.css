@@ -1,0 +1,42 @@
+.page-item.active .page-link {
+  z-index: 3;
+  color: #3f4e65;
+  background-color: #fd590d;
+  border-color: #f56f02;
+  padding: 5px 12px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+}
+.page-link {
+  color: #3f4e65;
+  font-size: 20px;
+  cursor: pointer;
+}
+ul {
+  font-size: 14px;
+  display: flex;
+  gap: 20px;
+}
+
+.page-item.active:hover {
+  color: #ffc85e;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.page-item.active:hover {
+  color: #ffc85e;
+  font-size: 20px;
+  cursor: pointer;
+}
+.page-link:hover {
+  color: #ffc85e;
+  font-size: 20px;
+  cursor: pointer;
+}

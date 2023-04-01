@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./BreadCrumbs.module.css";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const BreadCrumbs = () => {
   return (
@@ -14,7 +14,6 @@ const BreadCrumbs = () => {
           <a href="/" className={s.categories__select}>
             Косметика и уход
           </a>
-
         </div>
       </div>
     </div>

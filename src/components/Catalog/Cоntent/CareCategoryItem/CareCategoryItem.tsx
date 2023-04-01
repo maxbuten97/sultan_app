@@ -2,28 +2,33 @@ import React from "react";
 import s from "./CareCategoryItem.module.css";
 import { ICareCategory } from "../../../../shared/interfaces/CareCategoryInterface";
 
-
 const CareCategoryItem = (props: {
   careCategory: ICareCategory;
-  selectedCareCategory: string;
-  setSelectedCareCategory: (category: string) => void;
+  selectedCareCategory: string[];
+  setSelectedCareCategory: (category: string[]) => void;
 }) => {
-
   function selectCareCategory() {
-    if(props.selectedCareCategory === props.careCategory.category) {
-      props.setSelectedCareCategory('')
+    if (props.selectedCareCategory.includes(props.careCategory.category)) {
+      const filteredCareCategories = props.selectedCareCategory.filter(
+        (careCategory) => careCategory !== props.careCategory.category
+      );
+      props.setSelectedCareCategory(filteredCareCategories);
     } else {
-      props.setSelectedCareCategory(props.careCategory.category);
+      props.setSelectedCareCategory([
+        props.careCategory.category,
+        ...props.selectedCareCategory,
+      ]);
     }
   }
 
   function getClassNameBySelected() {
-    if (props.selectedCareCategory === props.careCategory.category) {
+    if (props.selectedCareCategory.includes(props.careCategory.category)) {
       return s.categoriesItemActive;
     } else {
       return s.categoriesItem;
     }
   }
+
   return (
     <div
       className={getClassNameBySelected()}

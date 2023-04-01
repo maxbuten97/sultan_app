@@ -15,8 +15,7 @@ const PromotionBanner = () => {
               <span className={s.strong}>Название</span> Акции
             </div>
             <div className={s.subtitle}>
-              Условия акции в пару строк, Условия акции <br /> в пару строк,
-              Условия акции в пару строк
+              Условия акции в пару строк, Условия акции в пару строк,
             </div>
             <div className={s.button}>Принять участие</div>
           </div>

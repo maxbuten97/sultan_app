@@ -3,13 +3,11 @@
   max-width: 1370px;
   margin: 0 auto;
 }
-.header {
-  border-bottom: 1px solid rgba(63, 78, 101, 0.2);
-}
 
 .header__row {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #3f4e6539;
 }
 .header__info {
   display: flex;
@@ -69,7 +67,208 @@
 .menu__contacts:hover {
   text-decoration: underline;
 }
+.logo__small {
+  display: none;
+  max-width: 97px;
+  height: 41px;
+  cursor: pointer;
+}
 
+.logo {
+  max-width: 156px;
+  height: 66px;
+  cursor: pointer;
+}
+
+.Nav {
+  margin: 4px 0 0 0;
+  padding-bottom: 5px;
+}
+
+.nav__row {
+  display: flex;
+  align-items: center;
+}
+.catalog {
+  margin-left: 38px;
+}
+
+.catalog__btn {
+  box-sizing: border-box;
+  background: #ffc85e;
+  border-radius: 79px;
+  padding: 24px 81px 21px 54px;
+  cursor: pointer;
+}
+
+.catalog__btn:hover {
+  background: #f5ba43;
+}
+.catalog__btn:active {
+  background: #ffc85e;
+}
+
+.catalog__text {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.catalog__text::after {
+  content: url("../../image/rectangle.svg");
+  position: absolute;
+  margin-left: 12px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  gap: 47px;
+  align-items: center;
+  background-color: #ededed;
+  border-radius: 36px;
+  margin-left: 15px;
+}
+.search__input {
+  font-size: 12px;
+  margin-left: 20px;
+  background-color: #ededed;
+}
+
+.image__wrapper {
+  background-color: #ffc85e;
+  border-radius: 50%;
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+}
+.image__wrapper:hover {
+  background: #f5ba43;
+}
+.image__wrapper:active {
+  background: #ffc85e;
+}
+.search__image {
+  padding: 13px 11px 11px 13px;
+}
+
+.info {
+  display: flex;
+  gap: 25px;
+}
+
+.info__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+  gap: 5px;
+  line-height: 17px;
+  margin-left: 35px;
+}
+
+.tel {
+  font-weight: 600;
+  color: #111111;
+  cursor: pointer;
+}
+
+.tel:hover {
+  text-decoration: underline;
+}
+
+.working_hours {
+  color: #3f4e65;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.callback {
+  color: #3f4e65;
+  font-size: 10px;
+  text-decoration-line: underline;
+}
+.info__img {
+  position: relative;
+  z-index: 2;
+}
+.info__img::before {
+  content: "";
+  position: absolute;
+  right: 15%;
+  bottom: 60%;
+  transform: translateX(50%);
+  background-color: #1fd85d;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.info__img::after {
+  content: "";
+  position: absolute;
+  right: 15%;
+  bottom: 57.65%;
+  transform: translateX(50%);
+  background-color: #f0f6fa;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.line__price_list {
+  height: 49px;
+  opacity: 0.1;
+  border: 1px dashed #3f4e65;
+  align-self: center;
+  margin-left: 25px;
+}
+
+.price_list {
+  margin-left: 20px;
+}
+
+.price_list__btn {
+  box-sizing: border-box;
+  background: #ffc85e;
+  border-radius: 79px;
+  padding: 24px 74px 21px 47px;
+  cursor: pointer;
+}
+
+.price_list__btn:hover {
+  background: #f5ba43;
+}
+.price_list__btn:active {
+  background: #ffc85e;
+}
+
+.price_list__text {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.price_list__text::after {
+  content: url("../../image/download.svg");
+  position: absolute;
+  margin-left: 15px;
+}
+
+.search__mob_wrap {
+  display: none;
+}
+.search__mob {
+  display: none;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3f4e65;
+}
+
+.burger__mob_wrap {
+  display: none;
+}
+.burger__mob {
+  display: none;
+}
 @media (max-width: 945px) {
   .container {
     max-width: 725px;
@@ -103,9 +302,251 @@
   .email__text {
     line-height: 14px;
   }
-  .subtext {
-  }
+
   .header__menu {
     gap: 10px;
+  }
+
+  .Nav {
+    margin: 0;
+  }
+
+  .nav__row {
+    font-size: 10px;
+    justify-content: space-between;
+  }
+  .catalog {
+    margin-left: 8px;
+  }
+
+  .logo__img {
+    max-width: 90px;
+  }
+
+  .catalog__btn {
+    position: relative;
+    padding: 17px 45px 14px 18px;
+  }
+
+  .catalog__text {
+    font-size: 9px;
+  }
+
+  .catalog__text::after {
+    margin-left: 6px;
+    bottom: 10px;
+  }
+
+  .search {
+    gap: 7px;
+    margin-left: 5px;
+  }
+  .search__input {
+    width: 70px;
+    font-size: 9px;
+    margin-left: 10px;
+  }
+
+  .search__input::placeholder {
+    font-size: 9px;
+  }
+
+  .search__image {
+    height: 21px;
+    padding: 6px 6px 6px 6px;
+  }
+
+  .info {
+    gap: 10px;
+  }
+
+  .info__text {
+    font-size: 9px;
+    width: 110px;
+    gap: 5px;
+    line-height: 10px;
+    margin-left: 5px;
+  }
+  .working_hours {
+    font-size: 9px;
+  }
+  .operator__img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .callback {
+    font-size: 9px;
+  }
+
+  .info__img::before {
+    bottom: 53%;
+  }
+  .info__img::after {
+    bottom: 50.65%;
+  }
+
+  .line__price_list {
+    height: 29px;
+    margin-left: 5px;
+  }
+
+  .price_list {
+    margin-left: 5px;
+  }
+
+  .price_list__btn {
+    padding: 17px 21px 14px 18px;
+    font-size: 9px;
+  }
+
+  .price_list__text {
+    width: 70px;
+  }
+
+  .price_list__text::after {
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 415px) {
+  .container {
+    max-width: 415px;
+  }
+
+  .header__row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #3f4e6539;
+  }
+  .header__info {
+    display: none;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .line_small {
+    display: none;
+  }
+
+  .header__menu {
+    display: none;
+  }
+  .burger__mob_wrap {
+    display: block;
+    position: relative;
+  }
+  .burger__mob {
+    display: block;
+  }
+  .burger__mob::before {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='20' viewBox='0 96 960 960' width='20'><path d='M146 784.769v-58h670v58H146ZM146 604v-58h670v58H146Zm0-178.769v-58h670v58H146Z' fill='%23ffffff'/></svg>");
+    position: absolute;
+    background-color: #ffc85e;
+    right: 110px;
+    top: 6px;
+    padding: 5px;
+    border-radius: 50px;
+  }
+  .logo__small {
+    display: block;
+    max-width: 97px;
+    height: 41px;
+  }
+  .logo__img {
+    display: none;
+  }
+
+  .Nav {
+    margin: 4px 0 0 0;
+    padding-bottom: 5px;
+  }
+
+  .nav__row {
+    margin-top: 10px;
+    justify-content: space-between;
+  }
+  .catalog {
+    margin-left: 38px;
+  }
+
+  .catalog__btn {
+    background: #fff;
+    padding: 0 0 0 0;
+  }
+
+  .catalog__btn:hover {
+    background: #fff;
+  }
+  .catalog__btn:active {
+    background: #fff;
+  }
+
+  .catalog__text {
+    font-size: 12px;
+    line-height: 15px;
+    padding-right: 50px;
+    color: #3f4e65;
+    border-right: 1px dashed rgba(63, 78, 101, 0.3);
+  }
+
+  .catalog__text::before {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='20' viewBox='0 96 960 960' width='20'><path d='M171 517V267h250v250H171Zm58-58h134V325H229v134Zm-58 426V635h250v250H171Zm58-58h134V693H229v134Zm310-310V267h250v250H539Zm58-58h134V325H597v134Zm-58 426V635h250v250H539Zm58-58h134V693H597v134ZM363 459Zm0 234Zm234-234Zm0 234Z' fill='%233F4E65'/></svg>");
+    position: absolute;
+    right: 100px;
+    top: -3px;
+  }
+
+  .search {
+    display: none;
+  }
+  .search__input {
+    font-size: 12px;
+    margin-left: 20px;
+    background-color: #ededed;
+  }
+  .search__mob_wrap {
+    display: block;
+    position: relative;
+  }
+  .search__mob {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #3f4e65;
+  }
+
+  .search__mob::before {
+    content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='20' viewBox='0 96 960 960' width='20'><path d='M769.385 904.154 529.923 664.693q-30 22.538-70.292 34.538-40.292 12-77.058 12-97.135 0-165.2-68.029-68.066-68.029-68.066-165.077t68.029-165.202q68.029-68.154 165.077-68.154 97.049 0 165.202 68.065 68.154 68.065 68.154 165.201 0 39.073-11.769 76.865-11.769 37.792-33.769 67.485l240.462 240.461-41.308 41.308ZM382.538 653.231q74.616 0 124.923-50.308Q557.769 552.615 557.769 478q0-74.615-50.308-124.923-50.307-50.308-124.923-50.308-74.615 0-124.923 50.308Q207.308 403.385 207.308 478q0 74.615 50.307 124.923 50.308 50.308 124.923 50.308Z' fill='%233F4E65'/></svg>");
+    position: absolute;
+    right: 40px;
+    bottom: -6px;
+  }
+
+  .image__wrapper {
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 10px 10px 10px 0;
+  }
+
+  .search__image {
+    padding: 13px 11px 11px 13px;
+  }
+
+  .info {
+    display: none;
+    gap: 25px;
+  }
+
+  .line__price_list {
+    display: none;
+  }
+
+  .price_list {
+    display: none;
   }
 }

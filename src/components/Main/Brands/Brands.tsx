@@ -19,9 +19,7 @@ const Brands = () => {
           <div className={s.title}>
             <span className={s.text}>Лучшие</span> Товары
           </div>
-          <div className={s.subtitle}>
-            От ведущих мировых брендов
-          </div>
+          <div className={s.subtitle}>От ведущих мировых брендов</div>
           <div className={s.list}>
             <div className={s.item}>
               <div className={s.imgWrapper}>

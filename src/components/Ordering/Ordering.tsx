@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./Ordering.module.css";
 import BreadCrumbs from "./BreadCrumbs/BreadCrumbs";
-import productPNG from "../../image/aos.png";
+import Modal from "./Modal/Modal";
+import { IBasketProduct } from "../../shared/interfaces/BasketProductInterface";
+import { NavLink, useNavigate } from "react-router-dom";
+import OrderingBasketProduct from "./OrderingBasketProduct/OrderingBasketProduct";
 
 const paymentSVG: string = require("../../image/wallet.svg").default;
 const deliverySVG: string = require("../../image/delivery.svg").default;
-const bottleSVG: string = require("../../image/bottle.svg").default;
 
-const Ordering = () => {
+const Ordering = (props: {
+  basketProducts: IBasketProduct[];
+  clearBasket: () => void;
+}) => {
+  const [isModal, setModal] = useState(false);
+  const navigate = useNavigate();
+  const onClose = () => {
+    setModal(false);
+    props.clearBasket();
+    navigate("/");
+  };
+
+  function getTotalSumBasket() {
+    return props.basketProducts.reduce(
+      (sum, current) => current.totalSum + sum,
+      0
+    );
+  }
+
   return (
     <div className={s.ordering}>
       <div className={s.container}>
@@ -73,7 +93,20 @@ const Ordering = () => {
                 />
               </div>
               <div className={s.address__btn_block}>
-                <button className={s.address__btn}>Подтверждение заказа</button>
+                {/* <!-- Модальное окно -->     */}
+                <React.Fragment>
+                  <button
+                    className={s.confirm__btn}
+                    onClick={() => setModal(true)}
+                  >
+                    Подтверждение заказа
+                  </button>
+                  <Modal
+                    visible={isModal}
+                    footer={<button onClick={onClose}>Закрыть</button>}
+                    onClose={onClose}
+                  />
+                </React.Fragment>
               </div>
             </div>
           </div>
@@ -85,7 +118,11 @@ const Ordering = () => {
                     <div className={s.info__cards__title}>
                       {" "}
                       <span className={s.payment}>
-                        <img className={s.payment__img} src={paymentSVG} alt="payment" />
+                        <img
+                          className={s.payment__img}
+                          src={paymentSVG}
+                          alt="payment"
+                        />
                       </span>{" "}
                       Оплата
                     </div>
@@ -99,7 +136,11 @@ const Ordering = () => {
                   <div className={s.info__cards__content}>
                     <div className={s.info__cards__title}>
                       <span className={s.delivery}>
-                        <img className={s.delivery__img} src={deliverySVG} alt="delivery" />
+                        <img
+                          className={s.delivery__img}
+                          src={deliverySVG}
+                          alt="delivery"
+                        />
                       </span>
                       Доставка
                     </div>
@@ -144,81 +185,30 @@ const Ordering = () => {
             <div className={s.order}>
               <div className={s.order__title}>Ваш заказ</div>
               <div className={s.order__list}>
-                <div className={s.order__item}>
-                  <div className={s.img_wrapper}>
-                    <img
-                      className={s.product__image}
-                      src={productPNG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.order__content}>
-                    <div className={s.order__volume}>
-                      <img className={s.bottle__image} src={bottleSVG} alt="bottle" />
-                      <div className={s.volume__text}>450мл</div>
-                    </div>
-                    <div className={s.product__name}>
-                      AOS средство для мытья посуды Crystal
-                    </div>
-                    <div className={s.product__price}>
-                      <span className={s.strong}>48,76 ₸</span>
-                    </div>
-                  </div>
-                </div>
-                <div className={s.line}></div>
-                <div className={s.order__item}>
-                  <div className={s.img_wrapper}>
-                    <img
-                      className={s.product__image}
-                      src={productPNG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.order__content}>
-                    <div className={s.order__volume}>
-                      <img src={bottleSVG} alt="bottle" />
-                      <div className={s.volume__text}>450мл</div>
-                    </div>
-                    <div className={s.product__name}>
-                      AOS средство для мытья посуды Crystal
-                    </div>
-                    <div className={s.product__price}>
-                      <span className={s.strong}>48,76 ₸</span>
-                    </div>
-                  </div>
-                </div>
-                <div className={s.line}></div>
-                <div className={s.order__item}>
-                  <div className={s.img_wrapper}>
-                    <img
-                      className={s.product__image}
-                      src={productPNG}
-                      alt="product"
-                    />
-                  </div>
-                  <div className={s.order__content}>
-                    <div className={s.order__volume}>
-                      <img src={bottleSVG} alt="bottle" />
-                      <div className={s.volume__text}>450мл</div>
-                    </div>
-                    <div className={s.product__name}>
-                      AOS средство для мытья посуды Crystal
-                    </div>
-                    <div className={s.product__price}>
-                      <span className={s.strong}>48,76 ₸</span>
-                    </div>
-                  </div>
-                </div>
+                {props.basketProducts.map((basketProduct, index) => {
+                  let product = basketProduct.product;
+                  if (product) {
+                    return (
+                      <OrderingBasketProduct
+                        basketProduct={basketProduct}
+                        key={index}
+                      />
+                    );
+                  }
+                })}
               </div>
-              <div className={s.line}></div>
 
               <div className={s.total__block}>
                 <div className={s.total__text}>Итого</div>
-                <div className={s.total__sum}>1 348,76 ₸</div>
+                <div className={s.total__sum}>{getTotalSumBasket()} ₸</div>
+                {/* мобильная */}
+                <button className={s.total__btn__mob}></button>
               </div>
-              <div className={s.total__btn_block}>
-                <button className={s.total__btn}>Редактировать заказ</button>
-              </div>
+              <NavLink to={"/basket"}>
+                <div className={s.total__btn_block}>
+                  <button className={s.total__btn}>Редактировать заказ</button>
+                </div>
+              </NavLink>
             </div>
           </div>
         </div>

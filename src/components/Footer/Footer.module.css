@@ -57,12 +57,24 @@
   background-color: #ffc85e;
   border-radius: 36px;
   margin: 10px 10px 10px 0;
+  cursor: pointer;
+}
+
+.image__wrapper:hover {
+  background: #f5ba43;
+}
+.image__wrapper:active {
+  background: #ffc85e;
 }
 
 .email__image {
   padding: 12px 16px 12px 16px;
 }
 
+.footer__menu_wrap {
+  display: flex;
+  gap: 90px;
+}
 .footer__menu {
   display: flex;
   flex-direction: column;
@@ -70,6 +82,13 @@
 }
 
 .footer__title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.footer__title__price {
+  display: block;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 25px;
@@ -115,7 +134,9 @@
 .connect {
   margin-top: 20px;
 }
-
+.social {
+  cursor: pointer;
+}
 .connect__img {
   display: flex;
   gap: 10px;
@@ -248,7 +269,10 @@
     font-size: 13px;
     margin-bottom: 15px;
   }
-
+  .footer__title__price {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
   .footer__links {
     gap: 8px;
     line-height: 15px;
@@ -341,5 +365,153 @@
   }
   .product__btn:active {
     background: #ffc85e;
+  }
+}
+
+@media (max-width: 415px) {
+  .container {
+    max-width: 415px;
+  }
+
+  .footer {
+    height: 700px;
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .footer__row {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 21px;
+  }
+
+  .footer__column {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer__about {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+  }
+
+  .about__text {
+    width: 100%;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  .subscribe__text {
+    margin-top: 25px;
+    font-size: 12px;
+  }
+
+  .email {
+    height: 59px;
+    margin-top: 14px;
+    max-width: 100%;
+  }
+  .email__input {
+    font-size: 12px;
+    margin-left: 20px;
+    max-width: 250px;
+    width: 250px;
+  }
+
+  .email__input::placeholder {
+    font-size: 12px;
+  }
+
+  .image__wrapper {
+    margin: 10px 10px 10px 0;
+  }
+
+  .email__image {
+    width: 40px;
+    padding: 12px 16px 12px 18px;
+  }
+  .footer__menu_wrap {
+    margin-top: 20px;
+    display: flex;
+    gap: 0;
+    justify-content: space-between;
+    padding-right: 5px;
+  }
+  .footer__menu {
+    font-size: 14px;
+    width: 150px;
+  }
+
+  .footer__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .footer__title__price {
+    display: none;
+  }
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 12px;
+  }
+
+  .footer__link {
+    color: #ffffff;
+  }
+
+  .price_list__btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 15px 0 0 0;
+    height: 40px;
+  }
+  .price_list__text::after {
+    margin-left: 5px;
+  }
+
+  .connect {
+    position: absolute;
+    margin-top: 20px;
+    bottom: 75px;
+    right: 35px;
+    font-size: 13px;
+    width: 100px;
+    line-height: 18px;
+  }
+
+  .connect__img {
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .social {
+    width: 39px;
+  }
+
+  .info {
+    gap: 5px;
+    line-height: 21px;
+  }
+  .tel {
+    font-size: 14px;
+  }
+
+  .working_hours {
+    font-size: 12px;
+  }
+
+  .callback {
+    font-size: 10px;
+  }
+
+  .mail__text {
+    font-size: 14px;
   }
 }

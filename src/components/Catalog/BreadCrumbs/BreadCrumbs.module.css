@@ -45,23 +45,33 @@
   .breadcrumbs {
     margin-top: 25px;
   }
-  
+
   .row {
     gap: 10px;
   }
-  
+
   .item {
     font-size: 12px;
     line-height: 13px;
   }
-  
+
   .categories__select {
     font-size: 12px;
     line-height: 13px;
   }
-  
+
   .line {
     height: 14px;
   }
+}
 
+@media (max-width: 415px) {
+  .container {
+    max-width: 360px;
+  }
+
+  .breadcrumbs {
+    margin-top: 25px;
+    display: none;
+  }
 }

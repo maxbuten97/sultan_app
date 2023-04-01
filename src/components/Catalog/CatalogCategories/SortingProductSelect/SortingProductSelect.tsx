@@ -15,7 +15,9 @@ const SortingProductSelect = (props: {
           props.setSorted((event.target as HTMLSelectElement).value)
         }
       >
-        <option className={s.default__select} value="default">Выберите сортировку</option>
+        <option className={s.default__select} value="default">
+          Выберите сортировку
+        </option>
         <option value="nameDesc">Название от А до Я</option>
         <option value="nameAsc">Название от Я до А</option>
         <option value="priceDesc">Дешевле</option>

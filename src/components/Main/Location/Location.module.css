@@ -145,7 +145,6 @@
     margin: 0 0 0 15px;
     gap: 5px;
     width: 375px;
-
   }
 
   .contacts {
@@ -228,5 +227,133 @@
   .department__mail {
     font-size: 10px;
     line-height: 14px;
+  }
+}
+
+@media (max-width: 415px) {
+  .container {
+    max-width: 360px;
+  }
+  .location {
+    margin-top: 80px;
+  }
+
+  .background {
+    position: relative;
+    background-image: url("../../../image/location.jpg");
+    height: 600px;
+  }
+
+  .block {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: flex;
+    width: 310px;
+    height: 350px;
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+  }
+
+  .information {
+    margin: 0 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+  }
+
+  .contacts {
+    margin-top: 10px;
+    position: absolute;
+    top: 0px;
+    width: 260px;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .subtitle {
+    margin-top: 5px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    color: #3f4e65;
+  }
+
+  .adress {
+    margin-top: 10px;
+  }
+
+  .adress__title {
+    font-weight: 700;
+    line-height: 18px;
+    color: #111111;
+  }
+
+  .adress__body {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .adress__text {
+    line-height: 18px;
+    color: #3f4e65;
+  }
+
+  .line {
+    margin-top: 10px;
+    max-width: 200px;
+    opacity: 0.2;
+    border: 1px dashed #3f4e65;
+  }
+
+  .data {
+    max-width: 180px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgb(25%, 31%, 40%, 0.2);
+  }
+
+  .data__title {
+    font-weight: 700;
+    line-height: 18px;
+    color: #111111;
+  }
+
+  .data__body {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .data__text {
+    line-height: 18px;
+    color: #3f4e65;
+  }
+
+  .department {
+    position: absolute;
+    top: 230px;
+    margin-top: 0px;
+  }
+
+  .department__title {
+    font-weight: 700;
+    line-height: 18px;
+    color: #111111;
+  }
+  .department__tel {
+    margin-top: 10px;
+  }
+  .department__tel,
+  .department__mail {
+    line-height: 18px;
+    color: #3f4e65;
   }
 }

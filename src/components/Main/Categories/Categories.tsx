@@ -22,7 +22,11 @@ const Categories = () => {
           <div className={s.categories__block}>
             <div className={s.categories__item}>
               <div className={s.imgWrapper}>
-                <img className={s.categories__image} src={itemPNG} alt="categories" />
+                <img
+                  className={s.categories__image}
+                  src={itemPNG}
+                  alt="categories"
+                />
               </div>
             </div>
             <div className={s.categories__name}>Бытовая химия</div>
@@ -32,7 +36,11 @@ const Categories = () => {
           <div className={s.categories__block}>
             <div className={s.categories__item}>
               <div className={s.imgWrapper}>
-                <img className={s.categories__image} src={itemPNG} alt="categories" />
+                <img
+                  className={s.categories__image}
+                  src={itemPNG}
+                  alt="categories"
+                />
               </div>
             </div>
             <div className={s.categories__name}>Бытовая химия</div>
@@ -40,7 +48,11 @@ const Categories = () => {
           <div className={s.categories__block}>
             <div className={s.categories__item}>
               <div className={s.imgWrapper}>
-                <img className={s.categories__image} src={itemPNG} alt="categories" />
+                <img
+                  className={s.categories__image}
+                  src={itemPNG}
+                  alt="categories"
+                />
               </div>
             </div>
             <div className={s.categories__name}>Бытовая химия</div>
@@ -48,7 +60,11 @@ const Categories = () => {
           <div className={s.categories__block}>
             <div className={s.categories__item}>
               <div className={s.imgWrapper}>
-                <img className={s.categories__image} src={itemPNG} alt="categories" />
+                <img
+                  className={s.categories__image}
+                  src={itemPNG}
+                  alt="categories"
+                />
               </div>
             </div>
             <div className={s.categories__name}>Бытовая химия</div>
@@ -56,7 +72,11 @@ const Categories = () => {
           <div className={s.categories__block}>
             <div className={s.categories__item}>
               <div className={s.imgWrapper}>
-                <img className={s.categories__image} src={itemPNG} alt="categories" />
+                <img
+                  className={s.categories__image}
+                  src={itemPNG}
+                  alt="categories"
+                />
               </div>
             </div>
             <div className={s.categories__name}>Бытовая химия</div>

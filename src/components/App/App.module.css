@@ -15,10 +15,19 @@
 }
 
 @media (max-width: 945px) {
-	.wrapper {
-		max-width: 945px;
-	  }
-	  .content {
-		min-height: calc(100vh - 250px);
-	  }
+  .wrapper {
+    max-width: 945px;
+  }
+  .content {
+    min-height: calc(100vh - 250px);
+  }
+}
+
+@media (max-width: 415px) {
+  .wrapper {
+    max-width: 415px;
+  }
+  .content {
+    min-height: calc(100vh - 748px);
+  }
 }

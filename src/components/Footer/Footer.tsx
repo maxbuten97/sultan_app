@@ -34,45 +34,47 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className={s.footer__menu}>
-            <div className={s.footer__title}>Меню сайта:</div>
-            <div className={s.footer__links}>
-              <a href="/" className={s.footer__link}>
-                О компании
-              </a>
-              <a href="/" className={s.footer__link}>
-                Доставка
-              </a>
-              <a href="/" className={s.footer__link}>
-                Возврат
-              </a>
-              <a href="/" className={s.footer__link}>
-                Контакты
-              </a>
+          <div className={s.footer__menu_wrap}>
+            <div className={s.footer__menu}>
+              <div className={s.footer__title}>Меню сайта:</div>
+              <div className={s.footer__links}>
+                <a href="/" className={s.footer__link}>
+                  О компании
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Доставка и оплата
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Возврат
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Контакты
+                </a>
+              </div>
             </div>
-          </div>
-          <div className={s.footer__categories}>
-            <div className={s.footer__title}>Категории:</div>
-            <div className={s.footer__links}>
-              <a href="/" className={s.footer__link}>
-                Бытовая химия
-              </a>
-              <a href="/" className={s.footer__link}>
-                Косметика и гигиена
-              </a>
-              <a href="/" className={s.footer__link}>
-                Товары для дома
-              </a>
-              <a href="/" className={s.footer__link}>
-                Товары для детей и мам
-              </a>
-              <a href="/" className={s.footer__link}>
-                Посуда
-              </a>
+            <div className={s.footer__categories}>
+              <div className={s.footer__title}>Категории:</div>
+              <div className={s.footer__links}>
+                <a href="/" className={s.footer__link}>
+                  Бытовая химия
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Косметика и гигиена
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Товары для дома
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Товары для детей и мам
+                </a>
+                <a href="/" className={s.footer__link}>
+                  Посуда
+                </a>
+              </div>
             </div>
           </div>
           <div className={s.footer__download}>
-            <div className={s.footer__title}>Скачать прайс-лист:</div>
+            <div className={s.footer__title__price}>Скачать прайс-лист:</div>
             <div className={s.price_list}>
               <div className={s.price_list__btn}>
                 <div className={s.price_list__text}>Прайс-лист</div>

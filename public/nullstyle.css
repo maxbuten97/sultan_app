@@ -41,6 +41,7 @@ input,
 button,
 textarea {
 	font-family: inherit;
+	padding-top: 1px;
 }
 
 input::-ms-clear {

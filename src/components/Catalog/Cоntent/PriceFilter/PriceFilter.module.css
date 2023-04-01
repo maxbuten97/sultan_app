@@ -19,15 +19,15 @@
   .price__filter {
     margin-top: 5px;
   }
-  
+
   .price__title {
     font-size: 10px;
     line-height: 14px;
     color: #3f4e65;
   }
-  
+
   .price {
     margin-top: 10px;
     gap: 5px;
   }
- }
+}

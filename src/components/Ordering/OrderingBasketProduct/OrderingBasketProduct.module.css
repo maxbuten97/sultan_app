@@ -1,0 +1,90 @@
+.order__item {
+  display: flex;
+  gap: 20px;
+}
+
+.product__image {
+  max-width: 217px;
+}
+
+.order__content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order__volume {
+  display: flex;
+  gap: 8px;
+}
+
+.volume__text {
+  font-size: 12px;
+  line-height: 16px;
+  color: #3f4e65;
+}
+
+.product__name {
+  margin-top: 9px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #111111;
+}
+
+.product__price {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: #111111;
+}
+.count {
+  font-size: 14px;
+  color: #3f4e65;
+  opacity: 0.5;
+}
+.line {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  opacity: 0.2;
+  border: 1px dashed #3f4e65;
+}
+
+@media (max-width: 945px) {
+  .order__item {
+    gap: 10px;
+  }
+
+  .product__image {
+    max-width: 115px;
+  }
+
+  .order__content {
+    margin-top: 10px;
+  }
+
+  .order__volume {
+    gap: 5px;
+  }
+  .bottle__image {
+    width: 8px;
+  }
+  .volume__text {
+    font-size: 9px;
+    line-height: 16px;
+  }
+
+  .product__name {
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .product__price {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

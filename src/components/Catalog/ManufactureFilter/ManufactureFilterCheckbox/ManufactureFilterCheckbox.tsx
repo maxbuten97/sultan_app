@@ -5,7 +5,6 @@ const ManufactureFilterCheckbox = (props: {
 
   selectManufactureFilter: (manufacture: string) => void;
 }) => {
-
   return (
     <div>
       <div className={s.checkbox__wrapper}>

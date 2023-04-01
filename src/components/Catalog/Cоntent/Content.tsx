@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
 import s from "./Content.module.css";
+import "./Content.css";
 import airWickPNG from "../../../image/airwick.png";
 import masterFreshPNG from "../../../image/masterFresh.png";
 import sibiarPNG from "../../../image/Sibiar.png";
@@ -8,58 +8,101 @@ import cottonClubPNG from "../../../image/cottonClub.png";
 import camayPNG from "../../../image/camay.png";
 import ProductItem from "../ProductItem/ProductItem";
 import { IProduct } from "../../../shared/interfaces/ProductInterface";
-import { CareCategoriesEnum } from "../../../shared/enums/CareCategoriesEnum";
 import { ICareCategory } from "../../../shared/interfaces/CareCategoryInterface";
 import ManufactureFilter from "../ManufactureFilter/ManufactureFilter";
 import CareCategory from "./CareCategory/CareCategory";
 import PriceFilter from "./PriceFilter/PriceFilter";
+import { IBasketProduct } from "../../../shared/interfaces/BasketProductInterface";
+import ReactPaginate from "react-paginate";
 const basketDeleteSVG: string =
   require("../../../image/basket_delete.svg").default;
 
 const Content = (props: {
-  selectedCareCategory: string;
-  setSelectedCareCategory: (category: string) => void;
+  selectedCareCategory: string[];
+  setSelectedCareCategory: (category: string[]) => void;
   storage: IProduct[];
   careCategories: ICareCategory[];
   deleteProduct: (product: IProduct) => void;
   isAdmin: boolean;
   sorted: string;
+  basketProducts: IBasketProduct[];
+  addBasketProduct: (id: string) => void;
+  setCountBasketProduct: (count: number, id: string) => void;
 }) => {
-  const [priceMinFilter, setPriceMinFilter] = useState<number>();
-  const [priceMaxFilter, setPriceMaxFilter] = useState<number>();
-  const [manufactureFilter, setManufactureFilter] = useState<string[]>([]);
-
   const manufacturesSet = new Set(
     props.storage.map((product) => {
       return product.manufacture;
     })
   );
+  const defaultManufactures: string[] = Array.from(
+    manufacturesSet.values()
+  ).sort();
 
-  const manufactures: string[] = Array.from(manufacturesSet.values());
+  /** Пагинация */
+  const [itemOffset, setItemOffset] = useState(0);
+  /** Элементов на странице */
+  const itemsPerPage = 9;
+  let listProducts = props.storage;
+  let currentItems: any[] = listProducts;
+  let pageCount: number = 0;
+
+  const [priceMinFilter, setPriceMinFilter] = useState<number>();
+  const [priceMaxFilter, setPriceMaxFilter] = useState<number>();
+  const [manufactureFilter, setManufactureFilter] = useState<string[]>([]);
+  const [manufactures, setManufactures] =
+    useState<string[]>(defaultManufactures);
+  /** */
+  function searchManufacture(searchText: string) {
+    if (searchText === "") {
+      setManufactures(defaultManufactures);
+    } else {
+      const newManufactures = defaultManufactures.filter((manufacture) =>
+        manufacture.includes(searchText)
+      );
+      setManufactures(newManufactures);
+    }
+  }
 
   function changeManufactureFilter(manufacture: string) {
     if (manufactureFilter.includes(manufacture)) {
       setManufactureFilter(manufactureFilter.filter((m) => m !== manufacture));
     } else {
-      setManufactureFilter([manufacture]);
+      setManufactureFilter([...manufactureFilter, manufacture]);
     }
   }
+
+  useEffect(() => {
+    showContent();
+    getPaginateProducts();
+  });
 
   function showContent() {
     let newProducts = props.storage;
     /**Фильтрация по выбранной категории ухода */
-    if (props.selectedCareCategory) {
-      newProducts = newProducts.filter((item) =>
-        item.category.includes(props.selectedCareCategory)
-      );
+    if (props.selectedCareCategory.length > 0) {
+      let array: IProduct[] = [];
+      props.selectedCareCategory.forEach((careCategory) => {
+        newProducts.forEach((product) => {
+          if (product.category.includes(careCategory)) {
+            if (!array.find((item) => item.id === product.id))
+              array.push(product);
+          }
+        });
+      });
+      newProducts = array;
     }
 
     if (manufactureFilter.length > 0) {
-      manufactureFilter.forEach((item) => {
-        newProducts = newProducts.filter(
-          (product) => product.manufacture === item
-        );
+      let array: IProduct[] = [];
+      manufactureFilter.forEach((manufacture) => {
+        newProducts.forEach((product) => {
+          if (product.manufacture == manufacture) {
+            if (!array.find((item) => item.id === product.id))
+              array.push(product);
+          }
+        });
       });
+      newProducts = array;
     }
 
     /**Фильтрация по минимальному значению */
@@ -90,20 +133,39 @@ const Content = (props: {
     if (props.sorted === "priceAsc") {
       newProducts.sort((a, b) => b.price - a.price);
     }
+
     /**Условие, если пустой массив, вернуть результат не найден */
     if (newProducts.length === 0) {
       return <div className={s.nonResult}>Результатов не найдено...</div>;
     }
-    return newProducts.map((item) => {
+    listProducts = [...newProducts];
+
+    return getPaginateProducts();
+  }
+
+  function getPaginateProducts() {
+    const endOffset = itemOffset + itemsPerPage;
+    currentItems = listProducts.slice(itemOffset, endOffset);
+    pageCount = Math.ceil(listProducts.length / itemsPerPage);
+
+    return currentItems.map((item) => {
       return (
         <ProductItem
           item={item}
           key={item.id}
           deleteProduct={props.deleteProduct}
           isAdmin={props.isAdmin}
+          addBasketProduct={props.addBasketProduct}
+          basketProducts={props.basketProducts}
+          setCountBasketProduct={props.setCountBasketProduct}
         />
       );
     });
+  }
+
+  function handlePageClick(event: any) {
+    const newOffset = (event.selected * itemsPerPage) % listProducts.length;
+    setItemOffset(newOffset);
   }
 
   return (
@@ -119,6 +181,7 @@ const Content = (props: {
             <ManufactureFilter
               manufactures={manufactures}
               changeManufactureFilter={changeManufactureFilter}
+              searchManufacture={searchManufacture}
             />
             <div className={s.view__buttons_block}>
               <div className={s.view__button}>Показать</div>
@@ -192,33 +255,27 @@ const Content = (props: {
             {showContent()}
 
             <div className={s.pagination__block}>
-              {/* <ul className={s.pagination}>
-                <li>
-                  <div className={s.arrow}>❮</div>
-                </li>
-                <li>
-                  <a className={s.active} href="/">
-                    1
-                  </a>
-                </li>
-                <li>
-                  <a href="/">2</a>
-                </li>
-                <li>
-                  <a href="/">3</a>
-                </li>
-                <li>
-                  <a href="/">4</a>
-                </li>
-                <li>
-                  <a href="/">5</a>
-                </li>
-                <li>
-                  <div className={s.arrow}>❯</div>
-                </li>
-              </ul> */}
+              <ReactPaginate
+                className={s.paginator}
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                containerClassName="pagination"
+                activeClassName="active"
+                nextLabel=">"
+                onPageChange={(e) => handlePageClick(e)}
+                pageRangeDisplayed={itemsPerPage}
+                pageCount={pageCount}
+                previousLabel="<"
+                renderOnZeroPageCount={() => null}
+              />
             </div>
-            {/* Заканчиваются тут */}
           </div>
         </div>
       </div>

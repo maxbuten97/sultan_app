@@ -92,6 +92,17 @@
   cursor: pointer;
 }
 
+.down_btn:hover {
+  background: #ffdaf2;
+}
+.down_btn:active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+}
+
 .number {
   font-weight: 500;
   line-height: 18px;
@@ -109,7 +120,16 @@
   border-radius: 40%;
   cursor: pointer;
 }
-
+.up_btn:hover {
+  background: #ffdaf2;
+}
+.up_btn:active {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 80, 0.3) 0%,
+    rgba(254, 202, 110, 0.3) 97.25%
+  );
+}
 .basket__btn {
   position: relative;
   box-sizing: border-box;
@@ -117,6 +137,12 @@
   border-radius: 79px;
   padding: 24px 72px 21px 43px;
   cursor: pointer;
+}
+.basket__btn:hover {
+  background: #f5ba43;
+}
+.basket__btn:active {
+  background: #ffc85e;
 }
 
 .basket__text {
@@ -276,17 +302,20 @@
   gap: 10px;
 }
 
-.edit__button, .save__button {
+.edit__button,
+.save__button {
   background-color: #fff;
   padding: 10px;
   border: 1px solid #3f4e65;
 }
 
-.edit__button:hover, .save__button:hover {
+.edit__button:hover,
+.save__button:hover {
   background-color: #edecec;
 }
 
-.edit__button:active, .save__button:active {
+.edit__button:active,
+.save__button:active {
   background-color: #fff;
 }
 
@@ -473,5 +502,30 @@ input::placeholder {
     line-height: 18px;
     font-size: 12px;
     /* display: none; */
+  }
+}
+
+@media (max-width: 415px) {
+  .container {
+    max-width: 360px;
+  }
+  .row {
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .network {
+    flex-wrap: wrap;
+    height: 130px;
+    justify-content: center;
+  }
+  .share {
+    text-align: center;
+    width: 80px;
+  }
+  .price_list {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
   }
 }

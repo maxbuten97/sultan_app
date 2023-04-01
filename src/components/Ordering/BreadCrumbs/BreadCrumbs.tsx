@@ -1,13 +1,16 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import s from "./BreadCrumbs.module.css";
 
 const BreadCrumbs = () => {
   return (
     <div className={s.breadcrumbs}>
       <div className={s.container}>
+        <NavLink to="/basket">
+          <div className={s.mobil__return}>В корзину</div>
+        </NavLink>
         <div className={s.row}>
-        <NavLink to="/" className={s.item}>
+          <NavLink to="/" className={s.item}>
             Главная
           </NavLink>
           <div className={s.line}></div>
@@ -18,7 +21,6 @@ const BreadCrumbs = () => {
           <a href="/" className={s.categories__select}>
             Оформление заказа
           </a>
-
         </div>
       </div>
     </div>

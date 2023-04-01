@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import s from "./ProductItem.module.css";
 import { NavLink } from "react-router-dom";
 import { IProduct } from "../../../shared/interfaces/ProductInterface";
+import { IBasketProduct } from "../../../shared/interfaces/BasketProductInterface";
 
 const bottleSVG: string = require("../../../image/bottle.svg").default;
 
@@ -9,8 +10,20 @@ const ProductItem = (props: {
   item: IProduct;
   deleteProduct: (listProducts: IProduct) => void;
   isAdmin: boolean;
+  addBasketProduct: (id: string) => void;
+  basketProducts: IBasketProduct[];
+  setCountBasketProduct: (count: number, id: string) => void;
 }) => {
   const item = props.item;
+  const basketProduct = props.basketProducts.find(
+    (x) => x.product?.id === item.id
+  );
+  let [counter, setCounter] = useState<number>(() => {
+    if (basketProduct) {
+      return basketProduct.count;
+    }
+    return 1;
+  });
 
   function getAdminTools() {
     if (props.isAdmin) {
@@ -22,6 +35,57 @@ const ProductItem = (props: {
     } else {
       return;
     }
+  }
+
+  function removeFromBasketCounter() {
+    if (counter === 1) {
+      props.setCountBasketProduct(-1, item.id);
+      return;
+    }
+    if (counter > 1) {
+      setCounter(counter - 1);
+      props.setCountBasketProduct(-1, item.id);
+    }
+  }
+
+  function addToBasketCounter() {
+    if (counter === 0) {
+      setCounter(1);
+    }
+    if (basketProduct) {
+      setCounter(basketProduct?.count + 1);
+    }
+    props.setCountBasketProduct(1, item.id);
+  }
+
+  function getAddToBasket() {
+    const findedProductBasket = props.basketProducts.find(
+      (basketProduct) => basketProduct.product?.id === item.id
+    );
+    if (findedProductBasket) {
+      return (
+        <div className={s.quantity}>
+          <button
+            onClick={() => removeFromBasketCounter()}
+            className={s.down_btn}
+          >
+            -
+          </button>
+          <div className={s.number}>{counter}</div>
+          <button onClick={() => addToBasketCounter()} className={s.up_btn}>
+            +
+          </button>
+        </div>
+      );
+    }
+    return (
+      <div
+        className={s.product__btn}
+        onClick={() => props.addBasketProduct(item.id)}
+      >
+        В корзину
+      </div>
+    );
   }
 
   return (
@@ -59,7 +123,7 @@ const ProductItem = (props: {
           </div>
           <div className={s.product__price_block}>
             <div className={s.product__price}>{item.price} ₸</div>
-            <div className={s.product__btn}>В корзину</div>
+            {getAddToBasket()}
           </div>
         </div>
       </div>

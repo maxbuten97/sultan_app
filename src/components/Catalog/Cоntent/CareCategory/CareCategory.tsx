@@ -6,20 +6,25 @@ const CareCategory = (props: {
     category: string;
     name: string;
   };
-  selectedCareCategory: string;
-  setSelectedCareCategory: (category: string) => void;
+  selectedCareCategory: string[];
+  setSelectedCareCategory: (category: string[]) => void;
 }) => {
-
   function selectCareCategory() {
-    if(props.selectedCareCategory === props.careCategory.category) {
-      props.setSelectedCareCategory('')
+    if (props.selectedCareCategory.includes(props.careCategory.category)) {
+      const filteredCareCategories = props.selectedCareCategory.filter(
+        (careCategory) => careCategory !== props.careCategory.category
+      );
+      props.setSelectedCareCategory(filteredCareCategories);
     } else {
-      props.setSelectedCareCategory(props.careCategory.category);
+      props.setSelectedCareCategory([
+        props.careCategory.category,
+        ...props.selectedCareCategory,
+      ]);
     }
   }
 
   function getClassNameBySelected() {
-    if (props.selectedCareCategory === props.careCategory.category) {
+    if (props.selectedCareCategory.includes(props.careCategory.category)) {
       return s.categoriesItemActive;
     } else {
       return s.categoriesTitle;

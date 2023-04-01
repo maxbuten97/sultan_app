@@ -53,7 +53,6 @@ const Promotion = () => {
             </div>
           </div>
           {/* 7 бесполезных карточек */}
-
           <div className={s.list__item}>
             <div className={s.popular}>Популярное</div>
             <div className={s.imgWrapper_product}>
@@ -342,6 +341,12 @@ const Promotion = () => {
             </div>
           </div>
           {/* Заканчиваются тут */}
+          <div className={s.slider}>
+            <div className={s.rectangle_active}></div>
+            <div className={s.rectangle}></div>
+            <div className={s.rectangle}></div>
+            <div className={s.rectangle}></div>
+          </div>
         </div>
       </div>
     </div>

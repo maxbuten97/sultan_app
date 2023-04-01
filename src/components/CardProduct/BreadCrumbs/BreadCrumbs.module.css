@@ -64,3 +64,9 @@
     line-height: 10px;
   }
 }
+
+@media (max-width: 415px) {
+  .row {
+    display: none;
+  }
+}
