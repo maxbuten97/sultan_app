@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan_app/static/css/main.ff1ce992.css",
-    "main.js": "/sultan_app/static/js/main.e29bf5a4.js",
+    "main.css": "/sultan_app/static/css/main.6a1fc0e4.css",
+    "main.js": "/sultan_app/static/js/main.10d4b943.js",
     "static/media/banner.jpg": "/sultan_app/static/media/banner.ec41a5384296bcf49f54.jpg",
     "static/media/woman.png": "/sultan_app/static/media/woman.723539eb497651b4a100.png",
     "static/media/location.jpg": "/sultan_app/static/media/location.4293dcbe326137b85569.jpg",
@@ -23,6 +23,7 @@
     "static/media/email.svg": "/sultan_app/static/media/email.5018676c2b55308960ea0cb953b5f2e7.svg",
     "static/media/bottle.svg": "/sultan_app/static/media/bottle.325e542d14d9b5b6e883f5bb67267b9a.svg",
     "static/media/TG.svg": "/sultan_app/static/media/TG.dcb86d5e3c8bccf9788892956ba6f9fe.svg",
+    "static/media/tel.svg": "/sultan_app/static/media/tel.e74ed3e8a20e93f90d9ea5afd4f2e047.svg",
     "static/media/document.svg": "/sultan_app/static/media/document.ea1b471d55e9a498a1c66ec81084ddb1.svg",
     "static/media/pen.svg": "/sultan_app/static/media/pen.297b53f1185454642469.svg",
     "static/media/geo.svg": "/sultan_app/static/media/geo.205123e38262c7b921aaf8c64eab1a78.svg",
@@ -37,11 +38,11 @@
     "static/media/burger.svg": "/sultan_app/static/media/burger.867d0eff8b7d9549e1072b8f7e02e94f.svg",
     "static/media/left.svg": "/sultan_app/static/media/left.8009929457bde0328f8f182170fd2c0f.svg",
     "static/media/arrow.svg": "/sultan_app/static/media/arrow.35ab94e2f8817f324bd31c2293385fa8.svg",
-    "main.ff1ce992.css.map": "/sultan_app/static/css/main.ff1ce992.css.map",
-    "main.e29bf5a4.js.map": "/sultan_app/static/js/main.e29bf5a4.js.map"
+    "main.6a1fc0e4.css.map": "/sultan_app/static/css/main.6a1fc0e4.css.map",
+    "main.10d4b943.js.map": "/sultan_app/static/js/main.10d4b943.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff1ce992.css",
-    "static/js/main.e29bf5a4.js"
+    "static/css/main.6a1fc0e4.css",
+    "static/js/main.10d4b943.js"
   ]
 }
