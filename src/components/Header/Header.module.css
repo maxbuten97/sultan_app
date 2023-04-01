@@ -83,6 +83,7 @@
 .Nav {
   margin: 4px 0 0 0;
   padding-bottom: 5px;
+  border-bottom: 1px solid #3f4e6539;
 }
 
 .nav__row {

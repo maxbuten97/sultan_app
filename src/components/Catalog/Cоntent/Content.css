@@ -26,7 +26,7 @@ ul {
   display: flex;
   gap: 20px;
 }
-ul::before {
+/* ul::before {
   content: "<";
   position: absolute;
   color: #ffc85e;
@@ -40,7 +40,16 @@ ul::after {
   color: #ffc85e;
   font-size: 20px;
   cursor: pointer;
+} */
+
+
+
+.next-link, .previous-link {
+  color: #ffc85e;
+  font-size: 22px;
+  cursor: pointer;
 }
+
 .page-item.active:hover {
   color: #ffc85e;
   font-size: 20px;
