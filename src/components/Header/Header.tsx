@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import operatorPNG from "../../image/operator.png";
 import BasketHeader from "./BasketHeader/BasketHeader";
 import { IBasketProduct } from "../../shared/interfaces/BasketProductInterface";
+import ModalMenu from "./ModalMenu/ModalMenu";
 const searchSVG: string = require("../../image/search.svg").default;
 const geoSVG: string = require("../../image/geo.svg").default;
 const emailSVG: string = require("../../image/email.svg").default;
 const logoSVG: string = require("../../image/logo_sultan.svg").default;
 const Header = (props: { basketProducts: IBasketProduct[] }) => {
+  const [isModalHeader, setModalHeader] = useState(false);
+  const onClose = () => {
+    setModalHeader(false);
+  };
   return (
     <header className={s.header}>
       <div className={s.container}>
@@ -36,11 +41,19 @@ const Header = (props: { basketProducts: IBasketProduct[] }) => {
           </div>
 
           {/* Для мобилки */}
-          <div className={s.burger__mob_wrap}>
-            <div className={s.burger__mob}></div>
+          <div className={s.burger__mob_wrap} >
+            <div className={s.burger__mob} onClick={() => setModalHeader(true)} >
+              <React.Fragment>
+                <ModalMenu
+                  visible={isModalHeader}
+                  footer={<button onClick={onClose}>Закрыть</button>}
+                  onClose={onClose}
+                />
+              </React.Fragment>
+            </div>
           </div>
           <div className={s.logoWrapper}>
-            <NavLink to="/">
+            <NavLink to="/sultan_app">
               <img className={s.logo__small} src={logoSVG} alt="logo" />
             </NavLink>
           </div>
@@ -58,7 +71,7 @@ const Header = (props: { basketProducts: IBasketProduct[] }) => {
         <div className={s.Nav}>
           <div className={s.nav__row}>
             <div className={s.nav__logoWrapper}>
-              <NavLink to="/">
+              <NavLink to="/sultan_app">
                 <img className={s.logo__img} src={logoSVG} alt="logo" />
               </NavLink>
             </div>

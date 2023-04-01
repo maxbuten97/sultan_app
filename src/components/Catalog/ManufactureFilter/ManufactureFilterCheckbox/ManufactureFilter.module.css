@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .checkbox__name {
     font-size: 14px;
   }

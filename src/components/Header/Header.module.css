@@ -409,7 +409,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .container {
     max-width: 415px;
   }
@@ -440,6 +440,7 @@
     position: relative;
   }
   .burger__mob {
+    cursor: pointer;
     display: block;
   }
   .burger__mob::before {
@@ -463,6 +464,7 @@
   .Nav {
     margin: 4px 0 0 0;
     padding-bottom: 5px;
+    border-bottom: 1px solid #3f4e6539;
   }
 
   .nav__row {

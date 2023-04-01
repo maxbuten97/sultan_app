@@ -18,7 +18,7 @@ const Ordering = (props: {
   const onClose = () => {
     setModal(false);
     props.clearBasket();
-    navigate("/");
+    navigate("/sultan_app");
   };
 
   function getTotalSumBasket() {

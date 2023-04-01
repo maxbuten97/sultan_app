@@ -67,7 +67,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .row {
     display: none;
   }

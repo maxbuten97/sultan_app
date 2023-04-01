@@ -25,7 +25,7 @@ const Footer = () => {
               <div className={s.input__wrapper}>
                 <input
                   className={s.email__input}
-                  type="text"
+                  type="email"
                   placeholder="Введите ваш E-mail"
                 />
               </div>

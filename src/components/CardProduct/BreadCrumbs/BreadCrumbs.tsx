@@ -7,7 +7,7 @@ const BreadCrumbs = () => {
     <div className={s.breadcrumbs}>
       <div className={s.container}>
         <div className={s.row}>
-          <NavLink to="/" className={s.item}>
+          <NavLink to="/sultan_app" className={s.item}>
             Главная
           </NavLink>
           <div className={s.line}></div>

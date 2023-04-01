@@ -217,7 +217,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .product__row {
     flex-direction: column;
     flex-wrap: wrap;

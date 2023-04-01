@@ -1,32 +1,21 @@
 .price__input_from {
   width: 100px;
-  padding: 5px 14px 3px 14px;
+  padding: 5px 10px 3px 14px;
   background: linear-gradient(
     90deg,
     rgba(255, 198, 80, 0.3) 0%,
     rgba(254, 202, 110, 0.3) 97.25%
   );
   border-radius: 50px;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 15px;
   text-align: center;
   color: #3f4e65;
+}
+.price__input_from::-webkit-input-placeholder {
+  font-size: 12px;
 }
 
-.price__input_to {
-  width: 100px;
-  padding: 5px 14px 3px 14px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 198, 80, 0.3) 0%,
-    rgba(254, 202, 110, 0.3) 97.25%
-  );
-  border-radius: 50px;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  color: #3f4e65;
-}
 
 @media (max-width: 945px) {
   .price__input_from {

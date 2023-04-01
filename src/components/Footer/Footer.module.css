@@ -251,6 +251,7 @@
     max-width: 90px;
     font-size: 9px;
     margin-left: 10px;
+    padding-top: 3px;
   }
 
   .email__image {
@@ -368,7 +369,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .container {
     max-width: 415px;
   }

@@ -277,7 +277,7 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .container {
     max-width: 360px;
   }

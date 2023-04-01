@@ -10,7 +10,7 @@ const BreadCrumbs = () => {
           <div className={s.mobil__return}>В корзину</div>
         </NavLink>
         <div className={s.row}>
-          <NavLink to="/" className={s.item}>
+          <NavLink to="/sultan_app" className={s.item}>
             Главная
           </NavLink>
           <div className={s.line}></div>

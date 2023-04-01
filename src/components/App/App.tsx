@@ -156,7 +156,7 @@ function App() {
           <div className={s.content}>
             <Header basketProducts={basketProducts} />
             <Routes>
-              <Route path="/" element={<Main />} />
+              <Route path="/sultan_app" element={<Main />} />
               <Route
                 path="/card-product/:id"
                 element={

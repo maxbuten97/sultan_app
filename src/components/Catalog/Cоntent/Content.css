@@ -13,17 +13,34 @@
     rgba(254, 202, 110, 0.3) 97.25%
   );
 }
+
 .page-link {
   color: #3f4e65;
   font-size: 20px;
   cursor: pointer;
 }
+
 ul {
+  position: relative;
   font-size: 14px;
   display: flex;
   gap: 20px;
 }
-
+ul::before {
+  content: "<";
+  position: absolute;
+  color: #ffc85e;
+  font-size: 20px;
+  cursor: pointer;
+}
+ul::after {
+  content: ">";
+  right: 0px;
+  position: absolute;
+  color: #ffc85e;
+  font-size: 20px;
+  cursor: pointer;
+}
 .page-item.active:hover {
   color: #ffc85e;
   font-size: 20px;
