@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan_app/static/css/main.4245e905.css",
-    "main.js": "/sultan_app/static/js/main.02046b17.js",
+    "main.css": "/sultan_app/static/css/main.6b6e1433.css",
+    "main.js": "/sultan_app/static/js/main.ad450d00.js",
     "static/media/banner.jpg": "/sultan_app/static/media/banner.ec41a5384296bcf49f54.jpg",
     "static/media/woman.png": "/sultan_app/static/media/woman.723539eb497651b4a100.png",
     "static/media/location.jpg": "/sultan_app/static/media/location.4293dcbe326137b85569.jpg",
@@ -38,11 +38,11 @@
     "static/media/burger.svg": "/sultan_app/static/media/burger.d906ea208bb9e5234ba07cb9d192a5e4.svg",
     "static/media/left.svg": "/sultan_app/static/media/left.f4ac09e46eed14aa13bb261588c2f9c8.svg",
     "static/media/arrow.svg": "/sultan_app/static/media/arrow.8fe293a3f80ceb5af59dc5dafe70d49f.svg",
-    "main.4245e905.css.map": "/sultan_app/static/css/main.4245e905.css.map",
-    "main.02046b17.js.map": "/sultan_app/static/js/main.02046b17.js.map"
+    "main.6b6e1433.css.map": "/sultan_app/static/css/main.6b6e1433.css.map",
+    "main.ad450d00.js.map": "/sultan_app/static/js/main.ad450d00.js.map"
   },
   "entrypoints": [
-    "static/css/main.4245e905.css",
-    "static/js/main.02046b17.js"
+    "static/css/main.6b6e1433.css",
+    "static/js/main.ad450d00.js"
   ]
 }
