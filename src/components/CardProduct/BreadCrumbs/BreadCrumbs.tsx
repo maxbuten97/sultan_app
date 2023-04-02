@@ -1,8 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import s from "./BreadCrumbs.module.css";
+import { IProduct } from '../../../shared/interfaces/ProductInterface';
 
-const BreadCrumbs = () => {
+const BreadCrumbs = (props: {
+  storage: IProduct[];
+}) => {
+  const { id } = useParams();
+  const [card] = useState<IProduct | undefined>(() => {
+    return props.storage.find((item) => item.id === id);
+  });
   return (
     <div className={s.breadcrumbs}>
       <div className={s.container}>
@@ -15,16 +22,8 @@ const BreadCrumbs = () => {
             Косметика и уход
           </NavLink>
           <div className={s.line}></div>
-          <NavLink to="/catalog" className={s.item}>
-            Уход за руками
-          </NavLink>
-          <div className={s.line}></div>
-          <NavLink to="/catalog" className={s.item}>
-            Мыло твердое
-          </NavLink>
-          <div className={s.line}></div>
           <div className={s.product__name}>
-            BioMio BIO-SOAP Экологичное туалетное мыло. Литсея и бергамот, 90 г
+           {card?.brand} {card?.name}
           </div>
         </div>
       </div>

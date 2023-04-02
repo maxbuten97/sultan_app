@@ -17,7 +17,7 @@ const CardProduct = (props: {
 }) => {
   return (
     <div className={s.card__product}>
-      <BreadCrumbs />
+      <BreadCrumbs storage={props.storage}/>
       <Card
         storage={props.storage}
         isAdmin={props.isAdmin}

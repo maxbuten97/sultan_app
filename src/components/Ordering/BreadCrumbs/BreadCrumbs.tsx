@@ -18,9 +18,9 @@ const BreadCrumbs = () => {
             Корзина
           </NavLink>
           <div className={s.line}></div>
-          <a href="/" className={s.categories__select}>
+          <div className={s.categories__select}>
             Оформление заказа
-          </a>
+          </div>
         </div>
       </div>
     </div>
