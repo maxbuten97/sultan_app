@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import s from "./App.module.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -156,7 +156,7 @@ function App() {
           <div className={s.content}>
             <Header basketProducts={basketProducts} />
             <Routes>
-              <Route path="/sultan_app" element={<Main />} />
+              <Route path="/sultan_app" element={<Main />}/>
               <Route
                 path="/card-product/:id"
                 element={

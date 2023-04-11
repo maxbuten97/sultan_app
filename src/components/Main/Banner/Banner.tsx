@@ -14,9 +14,9 @@ const Banner = () => {
             <h2 className={s.subtitle}>оптом по кокчетаву и области</h2>
           </div>
           <div className={s.catalog}>
-            <NavLink to="/catalog">
+            <NavLink to="/catalog" data-testid="inCatalogLink">
               <div className={s.catalog__btn}>
-                <div className={s.catalog__text}>В Каталог</div>
+                <div className={s.catalog__text} >В Каталог</div>
               </div>
             </NavLink>
           </div>

@@ -9,6 +9,7 @@ const CareCategory = (props: {
   selectedCareCategory: string[];
   setSelectedCareCategory: (category: string[]) => void;
 }) => {
+  /**Отфильтровать категорию */
   function selectCareCategory() {
     if (props.selectedCareCategory.includes(props.careCategory.category)) {
       const filteredCareCategories = props.selectedCareCategory.filter(
@@ -22,7 +23,7 @@ const CareCategory = (props: {
       ]);
     }
   }
-
+/**Получить выбранный класс */
   function getClassNameBySelected() {
     if (props.selectedCareCategory.includes(props.careCategory.category)) {
       return s.categoriesItemActive;
@@ -32,6 +33,7 @@ const CareCategory = (props: {
   }
   return (
     <div
+      data-testid="selectCategoryTest"
       className={getClassNameBySelected()}
       onClick={() => selectCareCategory()}
     >

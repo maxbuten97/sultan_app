@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import s from "./BasketCard.module.css";
 import { IBasketProduct } from "../../../shared/interfaces/BasketProductInterface";
 import { NavLink } from "react-router-dom";
+import ProductTitle from "../../../shared/components/ProductTitle/ProductTitle";
+import ProductSizeInfo from "../../../shared/components/ProductSizeInfo/ProductSizeInfo";
 const basketDeleteSVG: string =
   require("../../../image/basket_delete.svg").default;
-const bottleSVG: string = require("../../../image/bottle.svg").default;
 const BasketCard = (props: {
   basketProduct: IBasketProduct;
   deleteBasketProduct: (id: string) => void;
@@ -48,19 +49,10 @@ const BasketCard = (props: {
             <img className={s.product_img} src={product.url} alt="product" />
           </div>
           <div className={s.product__body}>
-            <div className={s.volume__block}>
-              <img className={s.bottle} src={bottleSVG} alt="bottle" />
-              <div className={s.volume}>
-                {product.size}
-                {product.typeSize}
-              </div>
-            </div>
+            <ProductSizeInfo size={product.size} typeSize={product.typeSize} />
             <NavLink to={`/card-product/${product?.id}`}>
-              <div className={s.product__name}>
-                {product.brand} {product.name}
-              </div>
+              <ProductTitle brand={product.brand} name={product.name} />
             </NavLink>
-
             <div className={s.product__info}>{product.description}</div>
           </div>
           <div className={s.price__block}>

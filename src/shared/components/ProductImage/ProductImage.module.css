@@ -1,0 +1,28 @@
+  .imgWrapper_product {
+      text-align: center;
+      margin-top: 00px;
+  }
+
+  .product__image {
+      max-width: 296px;
+      max-height: 180px;
+  }
+
+  @media (max-width: 945px) {
+      .imgWrapper_product {
+          text-align: center;
+          margin-top: 20px;
+      }
+
+      .product__image {
+          max-width: 130px;
+      }
+
+  }
+
+  @media (max-width: 440px) {
+      .imgWrapper_product {
+          text-align: center;
+          margin-top: -10px;
+      }
+  }

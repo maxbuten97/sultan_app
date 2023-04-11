@@ -8,6 +8,7 @@ const PriceFilterInput = (props: {
   return (
     <div>
       <input
+      data-testid="inputTest"
         className={s.price__input_from}
         type="number"
         placeholder={props.placeholder}

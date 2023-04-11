@@ -6,9 +6,11 @@ const PriceFilter = (props: {
   setPriceMinFilter: (value: number) => void;
   setPriceMaxFilter: (value: number) => void;
 }) => {
+  /**Фильтр по минимальной цене */
   function selectMinFilter(value: number) {
     props.setPriceMinFilter(value);
   }
+  /**Фильтр по максимальной цене */
   function selectMaxFilter(value: number) {
     props.setPriceMaxFilter(value);
   }
@@ -19,9 +21,7 @@ const PriceFilter = (props: {
       </div>
       <div className={s.price}>
         <PriceFilterInput placeholder="0" setPriceFilter={selectMinFilter} />
-        {/* <input className={s.price__input_from} type="text" placeholder="0" /> */}
         <div className={s.delimiter}>-</div>
-        {/* <input className={s.price__input_to} type="text" placeholder="10 000" /> */}
         <PriceFilterInput
           placeholder="10 000"
           setPriceFilter={selectMaxFilter}

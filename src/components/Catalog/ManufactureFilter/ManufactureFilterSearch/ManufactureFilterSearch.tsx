@@ -6,7 +6,6 @@ const ManufactureFilterSearch = (props: {
   searchManufacture: (searchText: string) => void;
 }) => {
   const [searchText, setSearchText] = useState<string>("");
-
   function onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     switch (e.code) {
       case "Enter":
@@ -20,6 +19,7 @@ const ManufactureFilterSearch = (props: {
           className={s.search__input}
           type="text"
           placeholder="Поиск..."
+          data-testid="value-elem"
           onInput={(e: React.FormEvent<HTMLInputElement>) =>
             setSearchText((e.target as HTMLInputElement).value)
           }
@@ -27,6 +27,7 @@ const ManufactureFilterSearch = (props: {
         />
       </div>
       <div
+      data-testid="buttonTest"
         className={s.image__wrapper}
         onClick={() => props.searchManufacture(searchText)}
       >

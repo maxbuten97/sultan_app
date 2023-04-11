@@ -9,6 +9,7 @@ const searchSVG: string = require("../../image/search.svg").default;
 const geoSVG: string = require("../../image/geo.svg").default;
 const emailSVG: string = require("../../image/email.svg").default;
 const logoSVG: string = require("../../image/logo_sultan.svg").default;
+
 const Header = (props: { basketProducts: IBasketProduct[] }) => {
   const [isModalHeader, setModalHeader] = useState(false);
   const onClose = () => {
@@ -41,8 +42,8 @@ const Header = (props: { basketProducts: IBasketProduct[] }) => {
           </div>
 
           {/* Для мобилки */}
-          <div className={s.burger__mob_wrap} >
-            <div className={s.burger__mob} onClick={() => setModalHeader(true)} >
+          <div className={s.burger__mob_wrap}>
+            <div className={s.burger__mob} onClick={() => setModalHeader(true)}>
               <React.Fragment>
                 <ModalMenu
                   visible={isModalHeader}

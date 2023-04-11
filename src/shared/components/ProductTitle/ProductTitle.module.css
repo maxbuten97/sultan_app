@@ -1,0 +1,19 @@
+
+.product__name {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #111111;
+    cursor: pointer;
+  }
+  .product__name:hover {
+    text-decoration: underline;
+  }
+
+@media (max-width: 945px) {
+
+    .product__name {
+        font-size: 16px;
+        line-height: 16px;
+      }
+}

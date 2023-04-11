@@ -12,7 +12,7 @@ const BasketHeader = (props: { basketProducts: IBasketProduct[] }) => {
       (sum, b) => sum + b.count,
       0
     );
-    return <span className={s.basket__number}>{totalCount}</span>;
+    return <span className={s.basket__number} data-testid='countBasketTest'>{totalCount}</span>;
   }
   function getTotalSumBasket() {
     return props.basketProducts.reduce(
@@ -23,13 +23,13 @@ const BasketHeader = (props: { basketProducts: IBasketProduct[] }) => {
 
   return (
     <div className={s.basket}>
-      <div className={s.basket__imgWrapper}>
+      <div className={s.basket__imgWrapper} >
         <img className={s.basket__img} src={basketSVG} alt="basket" />
-        {getCountBasket()}
+        <span>{getCountBasket()}</span>
       </div>
       <div className={s.basket__text}>
         Корзина <br />
-        <span className={s.sum}>{getTotalSumBasket()} ₸</span>
+        <span className={s.sum} data-testid='sumBasketTest'>{getTotalSumBasket()} ₸</span>
       </div>
     </div>
   );

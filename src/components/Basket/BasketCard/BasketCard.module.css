@@ -42,7 +42,7 @@
   color: #3f4e65;
 }
 
-.product__name {
+/* .product__name {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
@@ -51,7 +51,7 @@
 }
 .product__name:hover {
   text-decoration: underline;
-}
+} */
 .product__info {
   font-weight: 300;
   font-size: 12px;
@@ -166,10 +166,10 @@
     line-height: 16px;
   }
 
-  .product__name {
+  /* .product__name {
     font-size: 16px;
     line-height: 16px;
-  }
+  } */
 
   .product__info {
     font-size: 11px;

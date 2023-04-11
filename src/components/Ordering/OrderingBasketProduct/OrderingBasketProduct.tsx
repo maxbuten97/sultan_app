@@ -17,20 +17,20 @@ const OrderingBasketProduct = (props: { basketProduct: IBasketProduct }) => {
         <div className={s.order__content}>
           <div className={s.order__volume}>
             <img className={s.bottle__image} src={bottleSVG} alt="bottle" />
-            <div className={s.volume__text}>
-              {props.basketProduct.product?.size}
+            <div className={s.volume__text} data-testid="sizeText">
+              {props.basketProduct.product?.size}{" "}
               {props.basketProduct.product?.typeSize}
             </div>
           </div>
-          <div className={s.product__name}>
+          <div className={s.product__name} data-testid='nameTest'>
             {props.basketProduct.product?.brand}{" "}
             {props.basketProduct.product?.name}
           </div>
           <div className={s.product__price}>
-            <div className={s.count}>
+            <div className={s.count} data-testid='countTest'>
               Количество: {props.basketProduct.count}
             </div>
-            <span className={s.strong}>
+            <span className={s.strong} data-testid='priceTest'>
               {props.basketProduct.product?.price} ₸
             </span>
           </div>

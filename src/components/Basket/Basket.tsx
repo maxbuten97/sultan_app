@@ -12,13 +12,14 @@ const Basket = (props: {
   setCountBasketProduct: (count: number, id: string) => void;
   deleteBasketProduct: (id: string) => void;
 }) => {
+  /**Получить общую сумму корзины */
   function getTotalSumBasket() {
     return props.basketProducts.reduce(
       (sum, current) => current.totalSum + sum,
       0
     );
   }
-
+/**Если продуктов к корзине нет, не переходим на страницу оформления заказа, т.е. блокируем кнопку */
   function isEmptyBasket() {
     if (props.basketProducts.length === 0) {
       return <div className={s.disabledBtn}>Добавьте продукт</div>;
@@ -30,7 +31,7 @@ const Basket = (props: {
       );
     }
   }
-
+/**Изменение текста загаловка, если корзина пуста показываем "Корзина пуста" */
   function changeTitleBasket() {
     if (props.basketProducts.length === 0) {
       return <div className={s.basket__title}>Корзина пуста</div>;
@@ -64,9 +65,6 @@ const Basket = (props: {
         </div>
         <div className={s.checkout__block}>
           {isEmptyBasket()}
-          {/* <NavLink to="/ordering">
-            <div className={s.checkout__btn}>Оформить заказ</div>
-          </NavLink> */}
           <div className={s.checkout__sum}>{getTotalSumBasket()} ₸</div>
         </div>
       </div>

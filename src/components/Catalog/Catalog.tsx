@@ -23,7 +23,7 @@ const Catalog = (props: {
   const [sorted, setSorted] = useState<string>("");
 
   return (
-    <div className={s.catalog}>
+    <div className={s.catalog} data-testid="catalog">
       <BreadCrumbs />
       <CatalogCategories
         selectedCareCategory={selectedCareCategory}

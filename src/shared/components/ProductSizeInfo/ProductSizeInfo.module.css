@@ -1,0 +1,41 @@
+.product__size {
+    display: flex;
+    gap: 8px;
+}
+
+.size__text {
+    font-size: 12px;
+    line-height: 16px;
+    color: #3f4e65;
+}
+
+@media (max-width: 945px) {
+
+    .product__size {
+        display: flex;
+        gap: 8px;
+    }
+
+    .size__image {
+        width: 7px;
+    }
+
+    .size__text {
+        font-size: 9px;
+        line-height: 13px;
+        color: #3f4e65;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .product__size {
+        display: flex;
+        gap: 8px;
+    }
+
+    .size__text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

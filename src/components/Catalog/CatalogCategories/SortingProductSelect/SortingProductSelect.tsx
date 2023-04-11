@@ -6,10 +6,11 @@ const SortingProductSelect = (props: {
 }) => {
   return (
     <div className={s.sorting__name}>
-      <label>Сортировка:</label>
+      <label data-testid="label-sort">Сортировка:</label>
       <select
         name="sorted"
         id="sorted"
+        data-testid="select1"
         className={s.select}
         onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
           props.setSorted((event.target as HTMLSelectElement).value)

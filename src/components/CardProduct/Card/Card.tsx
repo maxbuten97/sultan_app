@@ -59,7 +59,7 @@ const Card = (props: {
       props.setCountBasketProduct(1, product.id);
     }
   }
-
+  /**Показать админ-панель */
   function showAdminTools() {
     if (props.isAdmin) {
       return (

@@ -57,11 +57,11 @@
   max-width: 282px;
 }
 
-.imgWrapper_product {
+/* .imgWrapper_product {
   text-align: center;
   margin-top: -10px;
-}
-
+} */
+/* 
 .product__size {
   display: flex;
   gap: 8px;
@@ -71,7 +71,7 @@
   font-size: 12px;
   line-height: 16px;
   color: #3f4e65;
-}
+} */
 
 .product__name {
   color: #111111;
@@ -81,11 +81,12 @@
   line-height: 21px;
   letter-spacing: 0.03em;
 }
+
 .strong {
   font-weight: 800;
 }
 
-.product__characteristics {
+/* .product__characteristics {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -103,7 +104,7 @@
 .gray {
   color: #3f4e65;
   font-weight: 300;
-}
+} */
 
 .product__price_block {
   display: flex;
@@ -141,6 +142,7 @@
 .product__btn:hover {
   background: #f5ba43;
 }
+
 .product__btn:active {
   background: #ffc85e;
 }
@@ -148,6 +150,7 @@
 .slider {
   display: none;
 }
+
 .rectangle_active {
   display: none;
 }
@@ -159,6 +162,7 @@
 .rectangle:nth-child(3) {
   display: none;
 }
+
 .rectangle:nth-child(4) {
   display: none;
 }
@@ -167,6 +171,7 @@
   .container {
     max-width: 725px;
   }
+
   .promotion {
     margin-top: 30px;
   }
@@ -206,11 +211,12 @@
     max-width: 190px;
   }
 
+  /* 
   .imgWrapper_product {
     text-align: center;
     margin-top: -10px;
-  }
-  .size__image {
+  } */
+  /* .size__image {
     max-height: 12px;
   }
   .product__size {
@@ -222,7 +228,7 @@
     font-size: 8px;
     line-height: 16px;
     color: #3f4e65;
-  }
+  } */
 
   .product__name {
     margin-top: 5px;
@@ -325,12 +331,13 @@
     max-width: 282px;
   }
 
+  /* 
   .imgWrapper_product {
     text-align: center;
     margin-top: -10px;
-  }
+  } */
 
-  .product__size {
+  /* .product__size {
     display: flex;
     gap: 8px;
   }
@@ -338,7 +345,7 @@
   .size__text {
     font-size: 12px;
     line-height: 16px;
-  }
+  } */
 
   .product__name {
     margin-top: 10px;
@@ -346,11 +353,12 @@
     line-height: 21px;
     letter-spacing: 0.03em;
   }
+
   .strong {
     font-weight: 800;
   }
 
-  .product__characteristics {
+  /* .product__characteristics {
     font-size: 14px;
     margin-top: 20px;
     gap: 5px;
@@ -359,7 +367,7 @@
 
   .gray {
     font-size: 12px;
-  }
+  } */
 
   .product__price_block {
     margin-top: 15px;
